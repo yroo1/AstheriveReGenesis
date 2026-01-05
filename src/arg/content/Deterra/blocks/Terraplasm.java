@@ -67,6 +67,7 @@ public class Terraplasm {
                 heart = new BioHeart("heart"){{
                     requirements(Category.distribution, with(DeterraItems.quartz, 1));
                     size = 3;
+                    health = 700;
                 }};
                 pulseSource = new PulseSource("pulse-source"){{
                     requirements(Category.distribution, with(DeterraItems.quartz, 1));
@@ -75,6 +76,7 @@ public class Terraplasm {
                     requirements(Category.distribution, with(DeterraItems.quartz, 1));
                     size = 3;
                     unitType = TerraUnitTypes.turf;
+                    health = 500;
                 }};
                 
                 spitter = new BioTurret("spitter"){{

@@ -44,6 +44,7 @@ public class DeterraTurrets {
                     researchCost = with(DeterraItems.quartz, 100, DeterraItems.magnetite, 75);
   
                     health = 140;
+                    itemCapacity = 5;
                     outlineColor = GenesisPal.deterraOutline;
                     reload = 80f;
                     inaccuracy = 0.5f;
@@ -89,6 +90,7 @@ public class DeterraTurrets {
                     researchCost = with(DeterraItems.quartz, 100, DeterraItems.magnetite, 120);
   
                     health = 150;
+                    itemCapacity = 5;
                     outlineColor = GenesisPal.deterraOutline;
                     reload = 35f;
                     inaccuracy = 3f;
@@ -118,7 +120,8 @@ public class DeterraTurrets {
                             smokeEffect = Fx.shootBigSmoke;
                         }}
                     );
-                    shoot = new ShootAlternate(5f);
+                    shoot = new ShootAlternate(5.2f);
+                    recoils = 2;
                     drawer = new DrawTurret(){{
                         for(int i = 0; i < 2; i ++){
                             int f = i;
