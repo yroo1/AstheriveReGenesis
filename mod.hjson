@@ -1,0 +1,20 @@
+displayName: "A:RG"
+name: "arg"
+repo: "yroo1/AstheriveReGenesis"
+author: "nyle & yroo"
+main: "arg.ARGMod"
+description: '''
+[lightgray[]](this is a revamp of discontinued mod called Astherive Genesis by nyle)
+
+[[]]An ambitious Mindustry Java mod.
+
+Adds new campaign that revolves around a neoplasm-inspired substance called the [red[]]Terraplasm.[[]]
+
+Early version, may have issues and things can change in the future.
+
+[lightgray[]]v0.1 - early release.
+'''
+subtitle: "v0.1"
+version: 0.1
+minGameVersion: 154
+java: true
