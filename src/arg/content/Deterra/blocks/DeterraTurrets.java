@@ -21,7 +21,6 @@ import mindustry.content.Fx.*;
 import mindustry.Vars;
 import mindustry.content.Liquids;
 import mindustry.entities.part.RegionPart;
-import mindustry.entities.pattern.ShootSpread;
 import mindustry.gen.Sounds;
 import mindustry.type.Category;
 import mindustry.world.blocks.defense.turrets.ItemTurret;
@@ -49,14 +48,14 @@ public class DeterraTurrets {
                     reload = 80f;
                     inaccuracy = 0.5f;
                     size = 2;
-                    recoil = 3f;
+                    recoil = 1f;
                     range = 14 * Vars.tilesize;
                     rotateSpeed = 3f;
                     squareSprite = false;
                     shootSound = Sounds.shootDisperse;
                     minWarmup = 0.8f;
                     shootWarmupSpeed = 0.07f;
-                    shootY = 2;
+                    shootY = 0;
 
                     ammo(
                         DeterraItems.quartz, new BasicBulletType(3.8f, 90) {{
@@ -80,7 +79,7 @@ public class DeterraTurrets {
                                 progress = PartProgress.recoil;
                                 mirror = false;
                                 under = true;
-                                moveY = -1.5f;
+                                moveY = -2f;
                             }}
                         );
                     }};
@@ -94,14 +93,14 @@ public class DeterraTurrets {
                     reload = 50f;
                     inaccuracy = 3f;
                     size = 2;
-                    recoil = 3f;
+                    recoil = 1f;
                     range = 19 * Vars.tilesize;
                     rotateSpeed = 2f;
                     squareSprite = false;
                     shootSound = Sounds.shootDisperse;
                     minWarmup = 0.8f;
                     shootWarmupSpeed = 0.07f;
-                    shootY = 2;
+                    shootY = 1.5;
 
                     ammo(
                         DeterraItems.magnetite, new BasicBulletType(5.5f, 54) {{
@@ -119,15 +118,17 @@ public class DeterraTurrets {
                             smokeEffect = Fx.shootBigSmoke;
                         }}
                     );
+                    shoot = new ShootAlternate(4f);
                     drawer = new DrawTurret(){{
-                        parts.add(
-                            new RegionPart("-barrel"){{
+                        for(int i = 0; i < 2; i ++){
+                            int f = i;
+                            parts.add(new RegionPart("-barrel-" + (i == 0 ? "l" : "r")){{
                                 progress = PartProgress.recoil;
-                                mirror = true;
+                                recoilIndex = f;
                                 under = true;
-                                moveY = -   1;
-                            }}
-                        );
+                                moveY = -1.5f;
+                            }});
+                        }
                     }};
                 }};
             }
