@@ -118,7 +118,7 @@ public class DeterraTurrets {
                             smokeEffect = Fx.shootBigSmoke;
                         }}
                     );
-                    shoot = new ShootAlternate(4f);
+                    shoot = new ShootAlternate(4.5f);
                     drawer = new DrawTurret(){{
                         for(int i = 0; i < 2; i ++){
                             int f = i;

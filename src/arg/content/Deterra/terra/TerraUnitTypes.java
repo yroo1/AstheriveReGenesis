@@ -65,7 +65,7 @@ public class TerraUnitTypes{
                 }};
             }});
         }};
-        turf = new CamouflageUnitType("turf"){{
+        turf = new TerraUnitType("turf"){{
             constructor = CrawlUnit::create;
             health = 100;
             hitSize = 9f;
