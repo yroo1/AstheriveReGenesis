@@ -14,6 +14,7 @@ import mindustry.ui.*;
 import mindustry.world.*;
 import mindustry.world.Tile;
 import mindustry.entities.units.BuildPlan;
+import arg.content.deterra.blocks.DeterraDistribution;
 
 import static mindustry.Vars.*;
 
@@ -21,11 +22,12 @@ public class ItemTube extends Conveyor {
     //AWFUL
     public TextureRegion[][] topRegions = new TextureRegion[4][4];
     public ItemTube(String name){
-         super(name);
+        super(name);
     }
     @Override
     public void load(){
         super.load();
+        bridgeReplacement = DeterraDistribution.itemOverpass //i hate you
         for (int i=0;i<4;i++){
             for (int j=0;j<4;j++) {
                 topRegions[i][j]=Core.atlas.find(name+"-top-"+String.valueOf(i)+"-"+String.valueOf(j));
