@@ -1,5 +1,6 @@
 package arg.type.unit;
 
+import arc.math.*;
 import mindustry.content.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
@@ -30,5 +31,18 @@ public class TerraUnitType extends UnitType{
         }});
 
         healFlash = false;
+    }
+    
+    @Override
+    public void killed(Unit unit){
+        for(int xm = -3+1;xm<=3;xm++){
+            for(int ym = -3+1;ym<=3;ym++){
+                Tile other = world.tile((int)(Math.round(unit.x/tilesize))+xm,(int)(Math.round(unit.y/tilesize))+ym);
+                float dist = Mathf.sqrt(Mathf.pow(unit.x/tilesize-xm,2)+Mathf.pow(unit.x/tilesize-xm,2));
+                if(other.floor() instaceof GenesisFloor otherfloor){
+                    otherfloor.deathPheromone+=Mathf.max(0,1-dist/4);
+                }
+            }
+        }
     }
 }

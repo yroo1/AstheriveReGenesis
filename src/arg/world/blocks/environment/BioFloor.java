@@ -27,7 +27,7 @@ import java.util.Random;
 import static mindustry.Vars.*;
 
 //TiledFloor but cooler
-public class BioFloor extends Floor {
+public class BioFloor extends GenesisFloor {
     public TextureRegion[][] atlasRegion = new TextureRegion[12][4];
     public TextureRegion[] edgeRegion = new TextureRegion[4];
     

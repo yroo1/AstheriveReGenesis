@@ -49,7 +49,7 @@ public class DeterraEnv {
             {
                 //h
                 //liquid
-                deepWatergel = new Floor("deep-watergel"){{
+                deepWatergel = new GenesisFloor("deep-watergel"){{
                     speedMultiplier = 0.2f;
                     variants = 3;
                     liquidDrop = Liquids.water;
@@ -59,7 +59,7 @@ public class DeterraEnv {
                     supportsOverlay = false;
                     drownTime = 120;
                 }};
-                shallowWatergel = new Floor("shallow-watergel"){{
+                shallowWatergel = new GenesisFloor("shallow-watergel"){{
                     speedMultiplier = 0.4f;
                     variants = 3;
                     liquidDrop = Liquids.water;
@@ -70,14 +70,14 @@ public class DeterraEnv {
                 }};
                 //cromosand
                 //liquid
-                cromosandFloor = new Floor("cromosand-floor"){{
+                cromosandFloor = new GenesisFloor("cromosand-floor"){{
                     variants = 5;
                 }};
                 //floor
-                cromosandLightlyHardenedFloor = new Floor("cromosand-lightly-hardened-floor"){{
+                cromosandLightlyHardenedFloor = new GenesisFloor("cromosand-lightly-hardened-floor"){{
                     variants = 5;
                 }};
-                cromosandHardenedFloor = new Floor("cromosand-hardened-floor"){{
+                cromosandHardenedFloor = new GenesisFloor("cromosand-hardened-floor"){{
                     variants = 5;
                 }};
                 //wall
@@ -90,9 +90,9 @@ public class DeterraEnv {
                 }};
                 //eonstone
                 //floor
-                eonstoneFloor = new Floor("eonstone-floor", 5);
-                eonstoneLightlyErodedFloor = new Floor("eonstone-lightly-eroded-floor", 5);
-                eonstoneErodedFloor = new Floor("eonstone-eroded-floor", 5);
+                eonstoneFloor = new GenesisFloor("eonstone-floor", 5);
+                eonstoneLightlyErodedFloor = new GenesisFloor("eonstone-lightly-eroded-floor", 5);
+                eonstoneErodedFloor = new GenesisFloor("eonstone-eroded-floor", 5);
                 //wall
                 eonstoneWall = new StaticTree("eonstone-wall"){{variants = 5;}};
                 eonstoneErodedWall = new StaticWall("eonstone-eroded-wall"){{variants = 4;}};
@@ -101,7 +101,7 @@ public class DeterraEnv {
                     itemDrop = DeterraItems.carbon;
                 }};
                 //liquid
-                alyogelDeepFloor = new Floor("alyogel-deep-floor"){{
+                alyogelDeepFloor = new GenesisFloor("alyogel-deep-floor"){{
                     speedMultiplier = 0.2f;
                     variants = 3;
                     liquidDrop = Liquids.water;
@@ -110,7 +110,7 @@ public class DeterraEnv {
                     albedo = 0.95f;
                     supportsOverlay = false;
                 }};
-                alyogelFloor = new Floor("alyogel-floor"){{
+                alyogelFloor = new GenesisFloor("alyogel-floor"){{
                     speedMultiplier = 0.4f;
                     variants = 4;
                     liquidDrop = Liquids.water;

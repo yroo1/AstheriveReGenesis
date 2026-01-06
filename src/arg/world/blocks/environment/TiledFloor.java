@@ -25,7 +25,7 @@ import mindustry.world.blocks.environment.*;
 
 import static mindustry.Vars.*;
 
-public class TiledFloor extends Floor {
+public class TiledFloor extends GenesisFloor {
     public TextureRegion[][] atlasRegion = new TextureRegion[12][4];
     
     //...manually written
