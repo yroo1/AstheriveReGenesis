@@ -6,6 +6,9 @@ import mindustry.world.Block;
 import mindustry.world.blocks.power.*;
 import mindustry.world.draw.*;
 import arg.world.blocks.power.*;
+import mindustry.world.meta.*;
+import mindustry.content.*;
+import mindustry.gen.*;
 
 import static mindustry.type.ItemStack.with;
 
@@ -36,7 +39,6 @@ public class DeterraPower{
             size = 3;
             squareSprite = false;
             attribute = Attribute.steam;
-            group = BlockGroup.liquids;
             displayEfficiencyScale = 1f / 9f;
             minEfficiency = 9f - 0.0001f;
             powerProduction = 160f/60f / 9f;
@@ -46,7 +48,7 @@ public class DeterraPower{
             ambientSound = Sounds.loopHum;
             ambientSoundVolume = 0.06f;
 
-            drawer = new DrawMulti(new DrawDefault(), new DrawBlurSpin("-rotator", 2f,true));
+            drawer = new DrawMulti(new DrawDefault(), new DrawRegion("-rotator", 2f,true));
             researchCost = with(DeterraItems.quartz,300,DeterraItems.magnetite,400);
         }};
     }

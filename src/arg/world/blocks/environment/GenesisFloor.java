@@ -26,4 +26,14 @@ public class GenesisFloor extends Floor{
     public GenesisFloor(String name){
         super(name);
     }
+    public GenesisFloor(String name, int variants){
+        super(name);
+        this.variants = variants;
+        placeableLiquid = true;
+        allowRectanglePlacement = true;
+        instantBuild = true;
+        ignoreBuildDarkness = true;
+        obstructsLight = false;
+        placeEffect = Fx.rotateBlock;
+    }
 }

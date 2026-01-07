@@ -35,6 +35,7 @@ public class TerraUnitType extends UnitType{
         healFlash = false;
     }
     
+    /*
     @Override
     public void killed(Unit unit){
         for(int xm = -3+1;xm<=3;xm++){
@@ -47,4 +48,5 @@ public class TerraUnitType extends UnitType{
             }
         }
     }
+    */
 }
