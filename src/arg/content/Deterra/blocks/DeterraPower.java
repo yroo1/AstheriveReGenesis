@@ -37,7 +37,6 @@ public class DeterraPower{
         ventTurbine = new ThermalGenerator("vent-turbine"){{
             requirements(Category.power, with(DeterraItems.quartz, 60, DeterraItems.magnetite,80));
             size = 3;
-            squareSprite = false;
             attribute = Attribute.steam;
             displayEfficiencyScale = 1f / 9f;
             minEfficiency = 9f - 0.0001f;
@@ -48,7 +47,7 @@ public class DeterraPower{
             ambientSound = Sounds.loopHum;
             ambientSoundVolume = 0.06f;
 
-            drawer = new DrawMulti(new DrawRegion("-bottom"),new DrawRegion("-rotator", 2f,true),new DrawDefault(),);
+            drawer = new DrawMulti(new DrawRegion("-bottom"),new DrawRegion("-rotator", 2f,true),new DrawDefault());
             researchCost = with(DeterraItems.quartz,300,DeterraItems.magnetite,400);
         }};
     }
