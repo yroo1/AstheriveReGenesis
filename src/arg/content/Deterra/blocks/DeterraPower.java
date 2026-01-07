@@ -11,7 +11,7 @@ import static mindustry.type.ItemStack.with;
 
 public class DeterraPower{
     public static Block
-    relay, windTurbine;
+    relay, windTurbine, ventTurbine;
 
     public static void load(){
         relay = new PowerNode("relay"){{
@@ -31,7 +31,7 @@ public class DeterraPower{
             drawer = new DrawMulti(new DrawDefault(), new DrawRegion("-rotator", 5, true));
             researchCost = with(DeterraItems.quartz,20,DeterraItems.magnetite,10);
         }};
-        ventTurbine = ThermalGenerator("vent-turbine"){{
+        ventTurbine = new ThermalGenerator("vent-turbine"){{
             requirements(Category.power, with(DeterraItems.quartz, 60, DeterraItems.magnetite,80));
             size = 3;
             squareSprite = false;
