@@ -103,7 +103,7 @@ public class GenesisPlanets{
                 new HexSkyMesh(this, 11, 2.7f, 0.1f, 5, Color.valueOf("BAD1D4").a(0.4f), 7, 0.4f, 2f, 0.43f)             
             );
         }};
-        protus = new Planet("protus", deterra, 0.5f, 2){{
+        thrata = new Planet("thrata", deterra, 0.5f, 2){{
             accessible = false;
             hasAtmosphere = false;
             landCloudColor = Color.valueOf("535D64");
@@ -114,10 +114,9 @@ public class GenesisPlanets{
             iconColor = Color.valueOf("535D64");
             solarSystem = orrin;
             alwaysUnlocked = true;
-            generator = new SerpuloPlanetGenerator();
+            generator = new ThrataPlanetGenerator();
             meshLoader = () -> new MultiMesh(
-                new NoiseMesh(this,13,5,Color.valueOf("535D64"),0.5f,4,1,1,0.1f),
-                new NoiseMesh(this,13,5,Color.valueOf("535D64"),0.5f,7,3,2f,1f)
+                new HexMesh(this, 6)
             );
         }};
     }
