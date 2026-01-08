@@ -11,7 +11,7 @@ import mindustry.maps.generators.PlanetGenerator;
 import mindustry.world.Block;
 
 public class DeterraPlanetGenerator extends PlanetGenerator {
-    public float heightScl = 1.2f, octaves = 8, persistence = 0.7f, heightPow = 2.2f, heightMult = 1.1f;
+    public float heightScl = 1.2f, octaves = 9, persistence = 0.8f, heightPow = 2.2f, heightMult = 1.1f;
 
     @Override
     public float getHeight(Vec3 position) {
@@ -19,7 +19,7 @@ public class DeterraPlanetGenerator extends PlanetGenerator {
     }
 
     float rawHeight(Vec3 position) {
-        return Simplex.noise3d(seed, octaves, persistence, 1f / heightScl, 10f + position.x, 10f + position.y, 10f + position.z);
+        return Simplex.noise3d(seed, octaves, persistence, 1f / heightScl, 10f + position.x, 10f + position.y, 10f + position.z)-Mathf.abs(position.y);
     }
 
     @Override
