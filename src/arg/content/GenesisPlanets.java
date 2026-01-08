@@ -67,7 +67,7 @@ public class GenesisPlanets{
         }};
 
         // region planets
-        deterra = new Planet("deterra", thessar, 1f, 2){{
+        deterra = new Planet("deterra", thessar, 1f, 3){{
             accessible = true;
             hasAtmosphere = true;
             landCloudColor = Color.valueOf("DBF3FF");
@@ -100,7 +100,7 @@ public class GenesisPlanets{
                 new HexMesh(this, 7)
             );
             cloudMeshLoader = () -> new MultiMesh(
-                new HexSkyMesh(this, 11, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.88f), 3, 0.42f, 1f, 0.43f)             
+                new HexSkyMesh(this, 11, 2.7f, 0.1f, 5, Color.valueOf("BAD1D4").a(0.6f), 7, 0.7f, 2f, 0.43f)             
             );
         }};
         protus = new Planet("protus", deterra, 0.5f, 2){{

@@ -19,12 +19,12 @@ public class DeterraPlanetGenerator extends PlanetGenerator {
     }
 
     float rawHeight(Vec3 position) {
-        return Simplex.noise3d(seed, octaves, persistence, 1f / heightScl, 10f + position.x, 10f + position.y, 10f + position.z)-Math.abs(position.y);
+        return Simplex.noise3d(seed, octaves, persistence, 1f / heightScl, 10f + position.x, 10f + position.y, 10f + position.z)-Math.abs(position.y)*0.4f;
     }
 
     @Override
     public void getColor(Vec3 position, Color out) {
-        Block block = rawHeight(position) < 0.35f ? DeterraEnv.deepWatergel : rawHeight(position) < 0.4f ? DeterraEnv.shallowWatergel : rawHeight(position) < 0.45f ? DeterraEnv.alyogelFloor : rawHeight(position) < 0.55f ? DeterraEnv.eonstoneFloor : rawHeight(position) < 0.6f ? DeterraEnv.eonstoneErodedFloor : rawHeight(position) < 0.64f ? DeterraEnv.ranston : DeterraEnv.platedRanston;
+        Block block = rawHeight(position) < 0.35f ? DeterraEnv.deepWatergel : rawHeight(position) < 0.45f ? DeterraEnv.shallowWatergel : rawHeight(position) < 0.5f ? DeterraEnv.alyogelFloor : rawHeight(position) < 0.6f ? DeterraEnv.eonstoneFloor : rawHeight(position) < 0.64f ? DeterraEnv.eonstoneErodedFloor : rawHeight(position) < 0.7f ? DeterraEnv.ranston : DeterraEnv.platedRanston;
 
         out.set(block.mapColor).a(1f - block.albedo);
     }
