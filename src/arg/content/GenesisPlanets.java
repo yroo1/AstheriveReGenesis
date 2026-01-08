@@ -37,7 +37,7 @@ public class GenesisPlanets{
             solarSystem = this;
 
             meshLoader = () -> new SunMesh(
-                    this, 10, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
+                    this, 7, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
 
                     Color.valueOf("8EAFC3"),
                     Color.valueOf("A1C6CF"),
@@ -46,7 +46,7 @@ public class GenesisPlanets{
                     Color.valueOf("FFFFFF")
             );
             cloudMeshLoader = () -> new MultiMesh(
-                    new HexSkyMesh(this, 9, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.95f), 3, 0.42f, 1f, 0.43f)             
+                    new HexSkyMesh(this, 7, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.95f), 3, 0.42f, 1f, 0.43f)             
             );
         }};
         thessar = new Planet("thessar", orrin, 2f, 0){{
@@ -56,7 +56,7 @@ public class GenesisPlanets{
             orbitRadius = 55f;
 
             meshLoader = () -> new SunMesh(
-                    this, 9, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
+                    this, 5, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
 
                     Color.valueOf("A2615D"),
                     Color.valueOf("BD7771"),
@@ -90,7 +90,7 @@ public class GenesisPlanets{
               r.onlyDepositCore = true;
               r.waveTeam = GenesisTeams.terraplasm;
             };
-            allowLaunchToNumbered = false;
+            allowLaunchToNumbered = true;
             updateLighting = true;
             campaignRuleDefaults.fog = true;
             startSector = 2;
