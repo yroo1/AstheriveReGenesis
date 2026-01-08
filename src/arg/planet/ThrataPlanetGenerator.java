@@ -24,7 +24,7 @@ public class ThrataPlanetGenerator extends PlanetGenerator {
 
     @Override
     public void getColor(Vec3 position, Color out) {
-        Block block = rawHeight(position) < 0.4f ? Blocks.mud : rawHeight(position) < 0.45f ? Blocks.dirt : rawHeight(position) < 0.5f ? Blocks.rhyolite : rawHeight(position) < 0.6f ? Blocks.regolith : DeterraEnv.eonstoneErodedFloor
+        Block block = rawHeight(position) < 0.4f ? Blocks.mud : rawHeight(position) < 0.45f ? Blocks.dirt : rawHeight(position) < 0.5f ? Blocks.rhyolite : rawHeight(position) < 0.6f ? Blocks.regolith : DeterraEnv.eonstoneErodedFloor;
 
         out.set(block.mapColor).a(1f - block.albedo);
     }
