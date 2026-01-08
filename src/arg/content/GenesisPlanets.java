@@ -21,10 +21,10 @@ import mindustry.maps.planet.*;
 public class GenesisPlanets{
     public static Planet
             //star
-            orrin, thessar,
+            orrin,khessar,nroo,
 
     // planets
-    deterra,yaruth,
+    deterra,
 
     // muns
     thrata;
@@ -48,26 +48,41 @@ public class GenesisPlanets{
                     new HexSkyMesh(this, 7, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.4f),3,0.42f, 1f, 0.43f)
             );
         }};
-        yaruth = new Planet("yaruth", orrin, 2.5f, 0){{
+        nroo = new Planet("nroo", orrin, 2.5f, 0){{
             accessible = false;
             hasAtmosphere = true;
             solarSystem = orrin;
-            orbitRadius = 90f;
+            orbitRadius = 30f;
 
             meshLoader = () -> new SunMesh(
                     this, 6, 8, 1.5f, 1.5f, 1.4f, 1.6f, 1.2f,
 
-                    Color.valueOf("56B174"),
-                    Color.valueOf("6CBA85"),
-                    Color.valueOf("83C799"),
-                    Color.valueOf("D7F1DF")
+                    Color.valueOf("E4D563"),
+                    Color.valueOf("DED595"),
+                    Color.valueOf("E6E1BE"),
+                    Color.valueOf("FFFEFB")
             );
         }};
-        thessar = new Planet("thessar", orrin, 2f, 0){{
+        hista = new Planet("hista", orrin, 2f, 0){{
+            accessible = false;
+            hasAtmosphere = true;
+            solarSystem = orrin;
+            orbitRadius = 95f;
+
+            meshLoader = () -> new SunMesh(
+                    this, 5, 7, 1.5f, 0.7f, 1.4f, 1.6f, 1.2f,
+
+                    Color.valueOf("6930B3"),
+                    Color.valueOf("A25CC3"),
+                    Color.valueOf("D696DE"),
+                    Color.valueOf("FEDCFF")
+            );
+        }};
+        khessar = new Planet("khessar", orrin, 2f, 0){{
             accessible = true;
             hasAtmosphere = true;
             solarSystem = orrin;
-            orbitRadius = 70f;
+            orbitRadius = 65f;
 
             meshLoader = () -> new SunMesh(
                     this, 5, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
@@ -81,7 +96,7 @@ public class GenesisPlanets{
         }};
 
         // region planets
-        deterra = new Planet("deterra", thessar, 1f, 4){{
+        deterra = new Planet("deterra", khessar, 1f, 4){{
             accessible = true;
             hasAtmosphere = true;
             landCloudColor = Color.valueOf("DBF3FF");
@@ -108,7 +123,7 @@ public class GenesisPlanets{
             updateLighting = true;
             campaignRuleDefaults.fog = true;
             startSector = 2;
-            minZoom = 0.3f;
+            minZoom = 0.05f;
             generator = new DeterraPlanetGenerator();
             meshLoader = () -> new MultiMesh(
                 new HexMesh(this, 7)
@@ -117,7 +132,7 @@ public class GenesisPlanets{
                 new HexSkyMesh(this, 11, 2.7f, 0.1f, 5, Color.valueOf("BAD1D4").a(0.4f), 7, 0.4f, 2f, 0.43f)             
             );
         }};
-        thrata = new Planet("thrata", deterra, 0.5f, 2){{
+        thrata = new Planet("thrata", deterra, 0.3f, 2){{
             accessible = false;
             hasAtmosphere = false;
             landCloudColor = Color.valueOf("535D64");

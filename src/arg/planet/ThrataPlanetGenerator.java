@@ -11,7 +11,7 @@ import mindustry.maps.generators.PlanetGenerator;
 import mindustry.world.Block;
 
 public class ThrataPlanetGenerator extends PlanetGenerator {
-    public float heightScl = 1f, octaves = 7, persistence = 0.6f, heightPow = 2.7f, heightMult = 1.1f;
+    public float heightScl = 1f, octaves = 6, persistence = 0.6f, heightPow = 2f, heightMult = 1.1f;
 
     @Override
     public float getHeight(Vec3 position) {
@@ -24,7 +24,7 @@ public class ThrataPlanetGenerator extends PlanetGenerator {
 
     @Override
     public void getColor(Vec3 position, Color out) {
-        Block block = rawHeight(position) < 0.4f ? Blocks.mud : rawHeight(position) < 0.45f ? Blocks.dirt : rawHeight(position) < 0.5f ? Blocks.rhyolite : rawHeight(position) < 0.55f ? Blocks.regolith : rawHeight(position) < 0.6f ? DeterraEnv.eonstoneErodedFloor : rawHeight(position) < 0.7f ? DeterraEnv.ranston : DeterraEnv.platedRanston;
+        Block block = rawHeight(position) < 0.4f ? Blocks.mud : rawHeight(position) < 0.45f ? Blocks.dirt : rawHeight(position) < 0.5f ? Blocks.rhyolite : rawHeight(position) < 0.6f ? Blocks.regolith : DeterraEnv.eonstoneErodedFloor
 
         out.set(block.mapColor).a(1f - block.albedo);
     }
