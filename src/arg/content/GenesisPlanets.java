@@ -24,7 +24,7 @@ public class GenesisPlanets{
             orrin, thessar,
 
     // planets
-    deterra,yharuth,
+    deterra,yaruth,
 
     // muns
     thrata;
@@ -35,7 +35,6 @@ public class GenesisPlanets{
             accessible = true;
             hasAtmosphere = true;
             solarSystem = this;
-
             meshLoader = () -> new SunMesh(
                     this, 7, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
 
@@ -46,7 +45,7 @@ public class GenesisPlanets{
                     Color.valueOf("FFFFFF")
             );
             cloudMeshLoader = () -> new MultiMesh(
-                    new HexSkyMesh(this, 7, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.95f), 3,h 0.42f, 1f, 0.43f)
+                    new HexSkyMesh(this, 7, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.4f),3,0.42f, 1f, 0.43f)
             );
         }};
         yaruth = new yaruth("yaruth", orrin, 2.5f, 0){{
