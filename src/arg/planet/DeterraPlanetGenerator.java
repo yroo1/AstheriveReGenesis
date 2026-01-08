@@ -24,7 +24,7 @@ public class DeterraPlanetGenerator extends PlanetGenerator {
 
     @Override
     public void getColor(Vec3 position, Color out) {
-        Block block = rawHeight(position) < 0.35f ? DeterraEnv.deepWatergel : rawHeight(position) < 0.4f ? DeterraEnv.shallowWatergel : rawHeight(position) < 0.45f ? DeterraEnv.alyohelFloor : rawHeight(position) < 0.55f ? DeterraEnv.eonstoneFloor : rawHeight(position) < 0.6f ? DeterraEnv.eonstoneErodedFloor : rawHeight(position) < 0.64f ? DeterraEnv.ranston : DeterraEnv.platedRanston
+        Block block = rawHeight(position) < 0.35f ? DeterraEnv.deepWatergel : rawHeight(position) < 0.4f ? DeterraEnv.shallowWatergel : rawHeight(position) < 0.45f ? DeterraEnv.alyohelFloor : rawHeight(position) < 0.55f ? DeterraEnv.eonstoneFloor : rawHeight(position) < 0.6f ? DeterraEnv.eonstoneErodedFloor : rawHeight(position) < 0.64f ? DeterraEnv.ranston : DeterraEnv.platedRanston;
 
         out.set(block.mapColor).a(1f - block.albedo);
     }
