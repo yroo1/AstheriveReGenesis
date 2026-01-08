@@ -55,7 +55,7 @@ public class GenesisPlanets{
             orbitRadius = 30f;
 
             meshLoader = () -> new SunMesh(
-                    this, 6, 8, 1.5f, 1.5f, 1.4f, 1.6f, 1.2f,
+                    this, 6, 8, 0.6f, 1.5f, 1.4f, 1.6f, 1.2f,
 
                     Color.valueOf("E4D563"),
                     Color.valueOf("DED595"),
@@ -63,14 +63,14 @@ public class GenesisPlanets{
                     Color.valueOf("FFFEFB")
             );
         }};
-        hista = new Planet("hista", orrin, 2f, 0){{
+        hista = new Planet("hista", orrin, 0.8f, 0){{
             accessible = false;
             hasAtmosphere = true;
             solarSystem = orrin;
-            orbitRadius = 95f;
+            orbitRadius = 110f;
 
             meshLoader = () -> new SunMesh(
-                    this, 5, 7, 1.5f, 0.7f, 1.4f, 1.6f, 1.2f,
+                    this, 5, 7, 0.7f, 0.7f, 1.4f, 1.6f, 1.2f,
 
                     Color.valueOf("6930B3"),
                     Color.valueOf("A25CC3"),
@@ -82,7 +82,7 @@ public class GenesisPlanets{
             accessible = true;
             hasAtmosphere = true;
             solarSystem = orrin;
-            orbitRadius = 65f;
+            orbitRadius = 70f;
 
             meshLoader = () -> new SunMesh(
                     this, 5, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
@@ -123,7 +123,7 @@ public class GenesisPlanets{
             updateLighting = true;
             campaignRuleDefaults.fog = true;
             startSector = 2;
-            minZoom = 0.05f;
+            minZoom = 0.3f;
             generator = new DeterraPlanetGenerator();
             meshLoader = () -> new MultiMesh(
                 new HexMesh(this, 7)
