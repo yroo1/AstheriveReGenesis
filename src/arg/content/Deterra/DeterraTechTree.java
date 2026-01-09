@@ -27,11 +27,19 @@ public class DeterraTechTree {
                 node(DeterraDistribution.itemOverpass);
             });
             node(DeterraProduction.jaggedDrill, () -> {
-                //node(DeterraProduction.cliffBore);
+                node(DeterraProduction.jaggedDrill, () -> {
+                    node(DeterraProduction.cliffBore,Seq.with(new Objectives.OnSector(woodland)),() -> {
+                        
+                    });
+                });
+            });
+            node(DeterraProduction.polteritePress,Seq.with(new Objectives.OnSector(woodland)), () -> {
             });
             node(DeterraPower.relay, () -> {
                 node(DeterraPower.windTurbine, () -> {
-                
+                    node(DeterraPower.windTurbine,Seq.with(new Objectives.SectorComplete(landfall)), () -> {
+                        
+                    });
                 });
             });
             node(DeterraUnits.mechAssembler, () -> {
@@ -39,8 +47,9 @@ public class DeterraTechTree {
                 
                 });
             });
-            node(DeterraSectorPresets.landfall, Seq.with(new Objectives.OnSector(landfall)), () -> {
-
+            node(DeterraSectorPresets.landfall, () -> {
+                node(DeterraSectorPresets.woodland, Seq.with(new Objectives.SectorComplete(landfall)), () -> {
+                });
             });
         });
     }

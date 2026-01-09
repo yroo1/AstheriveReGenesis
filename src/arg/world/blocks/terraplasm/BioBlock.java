@@ -41,7 +41,7 @@ public class BioBlock extends Block {
     public float turretSpitterRandRate=0.01f;
     public int turretSpitterRandSpacing=10;
     
-    public int pulseToGrowRoot=3;
+    public int pulseToGrowRoot=2;
     
     public BioBlock(String name){
         super(name);
