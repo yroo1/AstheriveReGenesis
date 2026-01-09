@@ -123,7 +123,7 @@ public class GenesisPlanets{
             updateLighting = true;
             campaignRuleDefaults.fog = true;
             startSector = 2;
-            camRadius = 1f;
+            camRadius = 0.1f;
             minZoom = 0.3f;
             generator = new DeterraPlanetGenerator();
             meshLoader = () -> new MultiMesh(
