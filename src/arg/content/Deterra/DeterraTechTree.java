@@ -35,9 +35,13 @@ public class DeterraTechTree {
             });
             node(DeterraProduction.polteritePress,Seq.with(new Objectives.OnSector(woodland)), () -> {
             });
+            node(DeterraTurrets.fracture,Seq.with(new Objectives.OnSector(woodland)), () -> {
+                node(DeterraTurrets.frail, () -> {
+                });
+            });
             node(DeterraPower.relay, () -> {
                 node(DeterraPower.windTurbine, () -> {
-                    node(DeterraPower.windTurbine,Seq.with(new Objectives.SectorComplete(landfall)), () -> {
+                    node(DeterraPower.ventTurbine,Seq.with(new Objectives.SectorComplete(landfall)), () -> {
                         
                     });
                 });
