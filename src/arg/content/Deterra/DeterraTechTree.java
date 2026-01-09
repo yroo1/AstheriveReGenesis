@@ -15,11 +15,14 @@ public class DeterraTechTree {
     public static void load(){
         GenesisPlanets.deterra.techTree = nodeRoot("Deterra", DeterraStorage.coreProtocol, () -> {
             node(DeterraItems.quartz, Seq.with(new Objectives.Produce(DeterraItems.quartz)), () -> {
-               node(DeterraItems.magnetite, Seq.with(new Objectives.Produce(DeterraItems.magnetite)), () ->{
-                  node(DeterraItems.polterite, Seq.with(new Objectives.Produce(DeterraItems.polterite)), () ->{
+                node(DeterraItems.magnetite, Seq.with(new Objectives.Produce(DeterraItems.magnetite)), () ->{
+                    node(DeterraItems.carbon, Seq.with(new Objectives.Produce(DeterraItems.carbon)), () ->{
                   
-               });
-               });
+                    });
+                    node(DeterraItems.polterite, Seq.with(new Objectives.Produce(DeterraItems.polterite)), () ->{
+                  
+                    });
+                });
             });
             node(DeterraDistribution.itemTube, () -> {
                 node(DeterraDistribution.splitter, () -> {
