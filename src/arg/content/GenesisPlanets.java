@@ -63,11 +63,11 @@ public class GenesisPlanets{
                     Color.valueOf("FFFEFB")
             );
         }};
-        hista = new Planet("hista", ryii, 0.8f, 0){{
+        hista = new Planet("hista", ryii, 1.5f, 0){{
             accessible = false;
             hasAtmosphere = true;
-            solarSystem = orrin;
-            orbitRadius = 110f;
+            solarSystem = ryii;
+            orbitRadius = 130f;
 
             meshLoader = () -> new SunMesh(
                     this, 5, 7, 0.7f, 0.7f, 1.4f, 1.6f, 1.2f,

@@ -97,7 +97,7 @@ public class Terraplasm {
                     shootWarmupSpeed = 0.07f;
                     shootY = 2;
                     
-                    shootType = new BulletType(4.89, 24f){{
+                    shootType = new BulletType(4.89f, 24f){{
                         ammoMultiplier = 3f;
                         hitSize = 7f;
                         lifetime = 18f;
