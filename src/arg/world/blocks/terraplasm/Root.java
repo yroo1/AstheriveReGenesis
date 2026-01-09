@@ -123,7 +123,7 @@ public class Root extends BioBlock {
             }
         }
         
-        public void grow(growBlock){
+        public void grow(Block growBlock){
             Building heart=getNearestHeart().build;
             if(heart!=null&&heart.items.has(growBlock.requirements)){
                 tile.setBlock(growBlock,team);
