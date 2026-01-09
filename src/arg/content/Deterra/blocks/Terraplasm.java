@@ -13,6 +13,7 @@ import arg.world.blocks.terraplasm.*;
 import arg.content.deterra.*;
 import arg.world.blocks.defense.*;
 import arg.graphics.*;
+import arg.content.GenesisFx;
 import mindustry.world.blocks.defense.turrets.ItemTurret;
 import mindustry.world.blocks.defense.turrets.PowerTurret;
 import mindustry.world.blocks.storage.*;
@@ -88,7 +89,7 @@ public class Terraplasm {
                     inaccuracy = 8f;
                     size = 2;
                     recoil = 7f;
-                    range = 6 * Vars.tilesize;
+                    range = 11 * Vars.tilesize;
                     rotateSpeed = 4f;
                     squareSprite = false;
                     shootSound = Sounds.shootFlame;
@@ -96,14 +97,14 @@ public class Terraplasm {
                     shootWarmupSpeed = 0.07f;
                     shootY = 2;
                     
-                    shootType = new BulletType(3.35f, 17f){{
+                    shootType = new BulletType(4.89, 24f){{
                         ammoMultiplier = 3f;
                         hitSize = 7f;
                         lifetime = 18f;
                         pierce = true;
                         collidesAir = true;
-                        statusDuration = 60f * 4;
-                        shootEffect = Fx.shootSmallFlame;
+                        statusDuration = 60f * 2;
+                        shootEffect = GenesisFx.shootSpitter;
                         hitEffect = Fx.hitFlameSmall;
                         despawnEffect = Fx.none;
                         status = StatusEffects.burning;

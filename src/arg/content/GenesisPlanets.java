@@ -20,8 +20,8 @@ import mindustry.maps.planet.*;
 
 public class GenesisPlanets{
     public static Planet
-            //star
-            orrin,nroo,khessar,hista,
+            //stars, what reference?
+            ryii,nroo,khessar,hista,
 
     // planets
     deterra,
@@ -31,7 +31,7 @@ public class GenesisPlanets{
 
     public static void load(){
         // regions stars
-        orrin = new Planet("orrin", null, 6f, 0){{
+        ryii = new Planet("ryii", null, 6f, 0){{
             accessible = true;
             hasAtmosphere = true;
             solarSystem = this;
@@ -48,10 +48,10 @@ public class GenesisPlanets{
                     new HexSkyMesh(this, 7, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.4f),3,0.42f, 1f, 0.43f)
             );
         }};
-        nroo = new Planet("nroo", orrin, 2.5f, 0){{
+        nroo = new Planet("nroo", ryii, 2.5f, 0){{
             accessible = false;
             hasAtmosphere = true;
-            solarSystem = orrin;
+            solarSystem = ryii;
             orbitRadius = 30f;
 
             meshLoader = () -> new SunMesh(
@@ -63,7 +63,7 @@ public class GenesisPlanets{
                     Color.valueOf("FFFEFB")
             );
         }};
-        hista = new Planet("hista", orrin, 0.8f, 0){{
+        hista = new Planet("hista", ryii, 0.8f, 0){{
             accessible = false;
             hasAtmosphere = true;
             solarSystem = orrin;
@@ -78,10 +78,10 @@ public class GenesisPlanets{
                     Color.valueOf("FEDCFF")
             );
         }};
-        khessar = new Planet("khessar", orrin, 2f, 0){{
+        khessar = new Planet("khessar", ryii, 2f, 0){{
             accessible = true;
             hasAtmosphere = true;
-            solarSystem = orrin;
+            solarSystem = ryii;
             orbitRadius = 70f;
 
             meshLoader = () -> new SunMesh(
@@ -108,7 +108,7 @@ public class GenesisPlanets{
             orbitSpacing = 1;
             orbitRadius = 15f;
             iconColor = Color.valueOf("9AC0DB");
-            solarSystem = orrin;
+            solarSystem = ryii;
             alwaysUnlocked = clearSectorOnLose = true;
             allowLaunchLoadout = allowLaunchSchematics = false;
             defaultCore = DeterraStorage.coreProtocol;
@@ -141,7 +141,7 @@ public class GenesisPlanets{
             orbitSpacing = 1;
             orbitRadius = 4f;
             iconColor = Color.valueOf("535D64");
-            solarSystem = orrin;
+            solarSystem = ryii;
             alwaysUnlocked = true;
             generator = new ThrataPlanetGenerator();
             meshLoader = () -> new MultiMesh(

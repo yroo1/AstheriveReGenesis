@@ -27,12 +27,12 @@ public class DeterraPower{
             researchCost = with(DeterraItems.quartz,5);
         }};
         windTurbine = new WindTurbine("wind-turbine"){{
-            requirements(Category.power, with(DeterraItems.quartz, 20, DeterraItems.magnetite, 20));
+            requirements(Category.power, with(DeterraItems.quartz, 25, DeterraItems.magnetite, 20));
             size = 2;
             squareSprite = false;
-            powerProduction = (float) 1.0/3;
+            powerProduction = 1f/6f + 1f/4f;
             drawer = new DrawMulti(new DrawDefault(), new DrawRegion("-rotator", 5, true));
-            researchCost = with(DeterraItems.quartz,20,DeterraItems.magnetite,10);
+            researchCost = with(DeterraItems.quartz,10,DeterraItems.magnetite,10);
         }};
         ventTurbine = new ThermalGenerator("vent-turbine"){{
             requirements(Category.power, with(DeterraItems.quartz, 60, DeterraItems.magnetite,80));
@@ -47,7 +47,7 @@ public class DeterraPower{
             ambientSound = Sounds.loopHum;
             ambientSoundVolume = 0.06f;
 
-            drawer = new DrawMulti(new DrawRegion("-bottom"),new DrawRegion("-rotator", 2f,true),new DrawDefault());
+            drawer = new DrawMulti(new DrawRegion("-bottom"),new DrawRegion("-rotator", 6f,true),new DrawDefault());
             researchCost = with(DeterraItems.quartz,300,DeterraItems.magnetite,400);
         }};
     }

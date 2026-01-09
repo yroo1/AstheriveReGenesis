@@ -30,7 +30,7 @@ public class DeterraProduction {
             consumePower(10/60f);
             consumeLiquid(Liquids.hydrogen, 0.05f).boost();
 
-            drillTime = 500;
+            drillTime = 380;
             tier = 2;
             size = 2;
             fogRadius = 0;

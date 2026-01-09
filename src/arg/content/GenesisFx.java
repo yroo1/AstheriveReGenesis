@@ -21,5 +21,12 @@ public class GenesisFx{
         color(GenesisPal.terraPurple, GenesisPal.terraPurple, e.fin());
         stroke(e.fout() * 3f);
         Lines.circle(e.x, e.y, e.fin() * 32f);
-    });
+    }),
+    shootSpitter = new Effect(32f, 80f, e -> {
+        color(Pal.lightFlame, Pal.darkFlame, Color.gray, e.fin());
+
+        randLenVectors(e.id, 12, e.finpow() * 88f, e.rotation, 10f, (x, y) -> {
+            Fill.circle(e.x + x, e.y + y, 0.65f + e.fout() * 1.5f);
+        });
+    }).followParent(false);
 }

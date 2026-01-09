@@ -40,11 +40,11 @@ public class DeterraTurrets {
         {
             {
                 fracture = new ItemTurret("fracture"){{
-                    requirements(Category.turret, with(DeterraItems.quartz, 35, DeterraItems.magnetite, 25));
-                    researchCost = with(DeterraItems.quartz, 100, DeterraItems.magnetite, 75);
+                    requirements(Category.turret, with(DeterraItems.quartz, 25, DeterraItems.magnetite, 20));
+                    researchCost = with(DeterraItems.quartz, 25, DeterraItems.magnetite, 20);
   
                     health = 140;
-                    itemCapacity = 5;
+                    maxAmmo = 5;
                     outlineColor = GenesisPal.deterraOutline;
                     reload = 80f;
                     inaccuracy = 0.5f;
@@ -80,17 +80,17 @@ public class DeterraTurrets {
                                 progress = PartProgress.recoil;
                                 mirror = false;
                                 under = true;
-                                moveY = -2f;
+                                moveY = -2.5f;
                             }}
                         );
                     }};
                 }};
                 frail = new ItemTurret("frail"){{
-                    requirements(Category.turret, with(DeterraItems.quartz, 30, DeterraItems.magnetite, 35));
+                    requirements(Category.turret, with(DeterraItems.quartz, 20, DeterraItems.magnetite, 25));
                     researchCost = with(DeterraItems.quartz, 100, DeterraItems.magnetite, 120);
   
                     health = 150;
-                    itemCapacity = 5;
+                    maxAmmo = 5;
                     outlineColor = GenesisPal.deterraOutline;
                     reload = 35f;
                     inaccuracy = 3f;
@@ -129,7 +129,7 @@ public class DeterraTurrets {
                                 progress = PartProgress.recoil;
                                 recoilIndex = f;
                                 under = true;
-                                moveY = -1.5f;
+                                moveY = -2f;
                             }});
                         }
                     }};
