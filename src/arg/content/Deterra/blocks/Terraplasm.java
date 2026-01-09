@@ -64,7 +64,7 @@ public class Terraplasm {
                 }};
                 
                 harvester = new BioDrill("harvester"){{
-                    requirements(Category.distribution, with(DeterraItems.quartz, 1));
+                    requirements(Category.distribution, with(DeterraItems.quartz, 0));
                     size = 2;
                 }};
                 heart = new BioHeart("heart"){{
@@ -83,7 +83,7 @@ public class Terraplasm {
                 }};
                 
                 spitter = new BioTurret("spitter"){{
-                    requirements(Category.turret, with(DeterraItems.quartz, 1));
+                    requirements(Category.turret, with(DeterraItems.quartz, 5,DeterraItems.magnetite,4));
                     outlineColor = GenesisPal.terraOutline;
                     reload = 45f;
                     inaccuracy = 8f;

@@ -108,13 +108,12 @@ public class BioHeart extends BioBlock {
 
         @Override
         public boolean acceptItem(Building source, Item item){
-            //return team == source.team && items.total() < itemCapacity;
-            return true; //this guy always eat items (TEMPORARY)
+            return true //this guy always accept items, if its full item will be accepted but not added
         }
 
         @Override
         public void handleItem(Building source, Item item){
-            items.add(item, 1);
+            if(items.total() < itemCapacity) items.add(item, 1);
         }
 
         @Override
