@@ -108,7 +108,7 @@ public class BioHeart extends BioBlock {
 
         @Override
         public boolean acceptItem(Building source, Item item){
-            return true //this guy always accept items, if its full item will be accepted but not added
+            return true; //this guy always accept items, if its full item will be accepted but not added
         }
 
         @Override
