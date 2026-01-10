@@ -68,7 +68,8 @@ public class BioSpawner extends BioBlock {
         public void draw(){
             drawPulse(block.region,drawPulseScale);
             //copied from WobbleProp lol
-            Draw.rectv(bubbleRegion, tile.worldx(), tile.worldy(), region.width * region.scl()*(1+drawPulseScale)*(0.2f + spawnProgress / pulseToSpawn), region.height * region.scl()*(1+drawPulseScale)*(0.2f + spawnProgress / pulseToSpawn), 0, vec -> vec.add(
+            float bubbleScale = 0.2f + spawnProgress / (float)pulseToSpawn;
+            Draw.rectv(bubbleRegion, tile.worldx(), tile.worldy(), region.width * region.scl()*(1+drawPulseScale)*bubbleScale, region.height * region.scl()*(1+drawPulseScale)*bubbleScale, 0, vec -> vec.add(
             Mathf.sin(vec.y*3 + Time.time, wscl, wmag) + Mathf.sin(vec.x*3 - Time.time, 70 * wtscl, 0.8f * wmag2),
             Mathf.cos(vec.x*3 + Time.time + 8, wscl + 6f, wmag * 1.1f) + Mathf.sin(vec.y*3 - Time.time, 50 * wtscl, 0.2f * wmag2)
             ));
