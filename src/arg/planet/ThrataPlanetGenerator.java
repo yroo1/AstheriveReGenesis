@@ -13,7 +13,7 @@ import mindustry.world.Block;
 public class ThrataPlanetGenerator extends PlanetGenerator {
     public float heightScl = 0.7f, octaves = 6, persistence = 0.6f, heightPow = 2f, heightMult = 1.1f;
     
-    Vec3 craterPos = new Vec3(0.050298,0.236635,0.970295);
+    Vec3 craterPos = new Vec3(0.1503837331804,0.852868531952,0.5);
     @Override
     public float getHeight(Vec3 position) {
         return Mathf.pow(rawHeight(position), heightPow) * heightMult;

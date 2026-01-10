@@ -142,7 +142,7 @@ public class GenesisPlanets{
             orbitRadius = 4f;
             iconColor = Color.valueOf("535D64");
             solarSystem = ryii;
-            alwaysUnlocked = true;
+            alwaysUnlocked = false;
             generator = new ThrataPlanetGenerator();
             meshLoader = () -> new MultiMesh(
                 new HexMesh(this, 6)
