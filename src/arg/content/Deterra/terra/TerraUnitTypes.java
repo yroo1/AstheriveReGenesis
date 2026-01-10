@@ -83,5 +83,50 @@ public class TerraUnitTypes{
             segmentMag = 0.5f;
             speed = 1.2f;
         }};
+        boit = new TerraUnitType("boit"){{
+            constructor = UnitWaterMove::create;
+            health = 240;
+            hitSize = 12f;
+            omniMovement = false;
+            rotateSpeed = 2f;
+            targetAir = false;
+            speed = 0.8f;
+            faceTarget = false;
+            
+            trailLength = 20;
+            waveTrailX = 4f;
+            trailScl = 1.3f;
+            
+            moveSoundVolume = 0.4f;
+            moveSound = Sounds.shipMove;
+            abilities.add(new SpawnDeathAbility(){{
+                unit = turf;
+                amount = 2;
+            }});
+            weapons.add(new Weapon(){{
+                shootOnDeath = true;
+                targetUnderBlocks = false;
+                reload = 24f;
+                shootCone = 180f;
+                ejectEffect = Fx.none;
+                shootSound = Sounds.explosionCrawler;
+                shootSoundVolume = 0.4f;
+                x = shootY = 0f;
+                mirror = false;
+                bullet = new BulletType(){{
+                    collidesTiles = false;
+                    collides = false;
+                    rangeOverride = 25f;
+                    hitEffect = Fx.pulverize;
+                    speed = 0f;
+                    splashDamageRadius = 44f;
+                    instantDisappear = true;
+                    splashDamage = 0f;
+                    killShooter = true;
+                    hittable = false;
+                    collidesAir = true;
+                }};
+            }});
+        }};
     }
 }
