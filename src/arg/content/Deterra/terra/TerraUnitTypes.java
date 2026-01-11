@@ -86,7 +86,7 @@ public class TerraUnitTypes{
         }};
         boit = new TerraUnitType("boit"){{
             constructor = UnitWaterMove::create;
-            health = 240;
+            health = 140;
             hitSize = 13f;
             omniMovement = false;
             rotateSpeed = 2f;
