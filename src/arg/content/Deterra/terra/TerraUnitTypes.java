@@ -122,7 +122,7 @@ public class TerraUnitTypes{
                     speed = 0f;
                     splashDamageRadius = 44f;
                     instantDisappear = true;
-                    splashDamage = 0f;
+                    splashDamage = 22f;
                     killShooter = true;
                     hittable = false;
                     collidesAir = true;

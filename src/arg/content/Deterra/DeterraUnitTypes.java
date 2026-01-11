@@ -60,19 +60,19 @@ public class DeterraUnitTypes{
             
             trailLength = 22;
             waveTrailX = 4f;
-            trailScl = 1.5f;
+            trailScl = 1.8f;
             
             moveSoundVolume = 0.4f;
             moveSound = Sounds.shipMove;
             
             weapons.add(new Weapon("arg-tide-weapon"){{
-                reload = 27f;
-                x = 4f;
+                reload = 48f;
+                x = 4.8f;
                 y = 2f;
                 top = false;
                 baseRotation = -15f;
-                shootCone = 75f;
-                bullet = new BasicBulletType(3.2f, 7){{
+                shootCone = 180f;
+                bullet = new BasicBulletType(3.2f, 26){{
                     homingPower = 0.19f;
                     homingDelay = 4f;
                     width = 7f;
