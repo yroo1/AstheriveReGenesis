@@ -114,7 +114,7 @@ public class BioHeart extends BioBlock {
 
         @Override
         public void handleItem(Building source, Item item){
-            if(items.total() < itemCapacity) items.add(item, 1);
+            if(items.get(item) < itemCapacity) items.add(item, 1);
         }
 
         @Override

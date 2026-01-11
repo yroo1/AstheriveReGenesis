@@ -94,9 +94,9 @@ public class TerraUnitTypes{
             speed = 0.8f;
             faceTarget = false;
             
-            trailLength = 20;
+            trailLength = 28;
             waveTrailX = 4f;
-            trailScl = 2f;
+            trailScl = 3.4f;
             
             moveSoundVolume = 0.4f;
             moveSound = Sounds.shipMove;

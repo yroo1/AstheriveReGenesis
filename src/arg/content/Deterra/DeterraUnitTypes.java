@@ -23,7 +23,7 @@ import static arc.graphics.g2d.Lines.*;
 public class DeterraUnitTypes{
     public static UnitType
     saber,
-    
+    tide,
     ward;
     public static void load(){
         //region ground
@@ -46,6 +46,40 @@ public class DeterraUnitTypes{
                 }};
             }});
             
+        }};
+        //region naval
+        tide = new DeterraUnitType("tide"){{
+            constructor = UnitWaterMove::create;
+            health = 110;
+            hitSize = 12f;
+            omniMovement = false;
+            rotateSpeed = 2.9f;
+            targetAir = false;
+            speed = 0.95f;
+            faceTarget = true;
+            
+            trailLength = 22;
+            waveTrailX = 4f;
+            trailScl = 1.5f;
+            
+            moveSoundVolume = 0.4f;
+            moveSound = Sounds.shipMove;
+            
+            weapons.add(new Weapon("arg-tide-weapon"){{
+                reload = 27f;
+                x = 4f;
+                y = 2f;
+                top = false;
+                baseRotation = -15f;
+                shootCone 75f;
+                bullet = new BasicBulletType(3.2f, 7){{
+                    homingPower = 0.19f;
+                    homingDelay = 4f;
+                    width = 7f;
+                    height = 11f;
+                    lifetime = 70f;
+                }};
+            }});
         }};
 
         //region core
