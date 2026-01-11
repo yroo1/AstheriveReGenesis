@@ -142,8 +142,8 @@ public class Root extends BioBlock {
                 for(int j=0;j<=1;j++){
                     Tile adj;
                     adj = tile.nearby(i,j);
-                    if (adj.block().solid && !(adj.build instanceof RootBuild)){   
-                        clear2 = false;
+                    if (adj != null && adj.block() != null && (adj.block().solid || (!adj.build instanceof RootBuild && adj.build instanceof BioBuilding))){   
+                        clear3 = false;
                     }
                 }
             }
@@ -152,7 +152,7 @@ public class Root extends BioBlock {
                 for(int j=0;j<=2;j++){
                     Tile adj;
                     adj = tile.nearby(i,j);
-                    if (adj.block().solid && !(adj.build instanceof RootBuild)){   
+                    if (adj != null && adj.block() != null && (adj.block().solid || (!adj.build instanceof RootBuild && adj.build instanceof BioBuilding))){   
                         clear3 = false;
                     }
                 }
