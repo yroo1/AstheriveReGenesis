@@ -30,6 +30,9 @@ public class DeterraTechTree {
                    node(DeterraDistribution.itemGate);
                 });
                 node(DeterraDistribution.itemOverpass);
+                node(DeterraDistribution.itemLauncher,Seq.with(new Objectives.SectorComplete(woodland)),() -> {
+                    
+                });
             });
             node(DeterraProduction.jaggedDrill, () -> {
                 node(DeterraProduction.cliffBore,Seq.with(new Objectives.SectorComplete(woodland)),() -> {
@@ -53,9 +56,16 @@ public class DeterraTechTree {
                 node(DeterraUnitTypes.saber, () -> {
                 
                 });
+                node(DeterraUnits.boatAssembler,Seq.with(new Objectives.SectorComplete(woodland)), () -> {
+                    node(DeterraUnitTypes.tide, () -> {
+                
+                    });
+                });
             });
             node(DeterraSectorPresets.landfall, () -> {
                 node(DeterraSectorPresets.woodland, Seq.with(new Objectives.SectorComplete(landfall)), () -> {
+                    node(DeterraSectorPresets.remnants, Seq.with(new Objectives.SectorComplete(woodland),Objectives.Research(DeterraUnits.boatAssembler),Objectives.Research(DeterraDistribution.itemLauncher)), () -> {
+                    });
                 });
             });
         });
