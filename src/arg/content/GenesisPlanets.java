@@ -20,13 +20,14 @@ import mindustry.maps.planet.*;
 
 public class GenesisPlanets{
     public static Planet
-            //stars, what reference?
+            //stars, does it remind you of the other stars?
             ryii,nroo,khessar,hista,
 
-    // planets
-    deterra,
-
-    // muns
+    //planets
+    deterra,seerk,kikrea,
+    //asteroid..?
+    verdara,
+    //moon
     thrata;
 
     public static void load(){
@@ -35,6 +36,7 @@ public class GenesisPlanets{
             accessible = true;
             hasAtmosphere = true;
             solarSystem = this;
+            iconColor = Color.valueOf("B8D9DD");
             meshLoader = () -> new SunMesh(
                     this, 7, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
 
@@ -53,6 +55,7 @@ public class GenesisPlanets{
             hasAtmosphere = true;
             solarSystem = ryii;
             orbitRadius = 30f;
+            iconColor = Color.valueOf("E6E1BE");
 
             meshLoader = () -> new SunMesh(
                     this, 6, 8, 0.6f, 1.5f, 1.4f, 1.6f, 1.2f,
@@ -63,26 +66,12 @@ public class GenesisPlanets{
                     Color.valueOf("FFFEFB")
             );
         }};
-        hista = new Planet("hista", ryii, 1.5f, 0){{
-            accessible = false;
-            hasAtmosphere = true;
-            solarSystem = ryii;
-            orbitRadius = 130f;
-
-            meshLoader = () -> new SunMesh(
-                    this, 5, 7, 0.7f, 0.7f, 1.4f, 1.6f, 1.2f,
-
-                    Color.valueOf("6930B3"),
-                    Color.valueOf("A25CC3"),
-                    Color.valueOf("D696DE"),
-                    Color.valueOf("FEDCFF")
-            );
-        }};
         khessar = new Planet("khessar", ryii, 2f, 0){{
             accessible = true;
             hasAtmosphere = true;
             solarSystem = ryii;
             orbitRadius = 70f;
+            iconColor = Color.valueOf("EFC4B1");
 
             meshLoader = () -> new SunMesh(
                     this, 5, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
@@ -92,6 +81,22 @@ public class GenesisPlanets{
                     Color.valueOf("D09287"),
                     Color.valueOf("EFC4B1"),
                     Color.valueOf("FFDFCB")
+            );
+        }};
+        hista = new Planet("hista", ryii, 1.5f, 0){{
+            accessible = false;
+            hasAtmosphere = true;
+            solarSystem = ryii;
+            orbitRadius = 140f;
+            iconColor = Color.valueOf("D696DE");
+
+            meshLoader = () -> new SunMesh(
+                    this, 5, 7, 0.7f, 0.7f, 1.4f, 1.6f, 1.2f,
+
+                    Color.valueOf("6930B3"),
+                    Color.valueOf("A25CC3"),
+                    Color.valueOf("D696DE"),
+                    Color.valueOf("FEDCFF")
             );
         }};
 
@@ -147,6 +152,71 @@ public class GenesisPlanets{
             meshLoader = () -> new MultiMesh(
                 new HexMesh(this, 6)
             );
+        }};
+        seerk = new Planet("seerk", nroo, 0.8f, 2){{
+            accessible = false;
+            hasAtmosphere = true;
+            orbitSpacing = 1;
+            iconColor = Color.valueOf("535D64");
+            solarSystem = ryii;
+            alwaysUnlocked = false;
+            generator = new SeerkPlanetGenerator();
+            meshLoader = () -> new MultiMesh(
+                new HexMesh(this, 6)
+            );
+        }};
+        kikrea = new Planet("kikrea", hista, 1f, 2){{
+            accessible = false;
+            hasAtmosphere = true;
+            orbitSpacing = 1;
+            iconColor = Color.valueOf("535D64");
+            solarSystem = ryii;
+            alwaysUnlocked = false;
+            generator = new KikreaPlanetGenerator();
+            meshLoader = () -> new MultiMesh(
+                new HexMesh(this, 6)
+            );
+        }};
+        //rip verdara
+        verdara = makeAsteroid("verdara", khessar, Blocks.stoneWall, Blocks.iceWall, -1, 0.5f, 12, 2f, gen -> {});
+    }
+    private static Planet makeAsteroid(String name, Planet parent, Block base, Block tint, int seed, float tintThresh, int pieces, float scale, Cons<AsteroidGenerator> cgen){
+        return new Planet(name, parent, 0.12f){{
+            hasAtmosphere = false;
+            updateLighting = false;
+            sectors.add(new Sector(this, Ptile.empty));
+            camRadius = 0.68f * scale;
+            minZoom = 0.6f;
+            drawOrbit = false;
+            accessible = false;
+            clipRadius = 2f;
+            defaultEnv = Env.space;
+            icon = "commandRally";
+            generator = new AsteroidGenerator();
+            cgen.get((AsteroidGenerator)generator);
+
+            meshLoader = () -> {
+                iconColor = tint.mapColor;
+                Color tinted = tint.mapColor.cpy().a(1f - tint.mapColor.a);
+                Seq<GenericMesh> meshes = new Seq<>();
+                Color color = base.mapColor;
+                Rand rand = new Rand(id + 2);
+
+                meshes.add(new NoiseMesh(
+                    this, seed, 2, radius, 2, 0.55f, 0.45f, 14f,
+                    color, tinted, 3, 0.6f, 0.38f, tintThresh
+                ));
+
+                for(int j = 0; j < pieces; j++){
+                    meshes.add(new MatMesh(
+                        new NoiseMesh(this, seed + j + 1, 1, 0.022f + rand.random(0.039f) * scale, 2, 0.6f, 0.38f, 20f,
+                        color, tinted, 3, 0.6f, 0.38f, tintThresh),
+                        new Mat3D().setToTranslation(Tmp.v31.setToRandomDirection(rand).setLength(rand.random(0.44f, 1.4f) * scale)))
+                    );
+                }
+
+                return new MultiMesh(meshes.toArray(GenericMesh.class));
+            };
         }};
     }
 }
