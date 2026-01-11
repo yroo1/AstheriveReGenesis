@@ -72,7 +72,7 @@ public class GenesisPlanets{
             hasAtmosphere = true;
             solarSystem = ryii;
             orbitRadius = 70f;
-            iconColor = Color.valueOf("EFC4B1");
+            iconColor = Color.valueOf("D09287");
 
             meshLoader = () -> new SunMesh(
                     this, 5, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
@@ -141,12 +141,12 @@ public class GenesisPlanets{
         thrata = new Planet("thrata", deterra, 0.3f, 2){{
             accessible = false;
             hasAtmosphere = false;
-            landCloudColor = Color.valueOf("535D64");
+            landCloudColor = Color.valueOf("895397");
             orbitTime = 60f*5f;
             rotateTime = 60f*6f;
             orbitSpacing = 1;
             orbitRadius = 4f;
-            iconColor = Color.valueOf("535D64");
+            iconColor = Color.valueOf("895397");
             solarSystem = ryii;
             alwaysUnlocked = false;
             generator = new ThrataPlanetGenerator();
@@ -158,7 +158,7 @@ public class GenesisPlanets{
             accessible = false;
             hasAtmosphere = true;
             orbitSpacing = 1;
-            iconColor = Color.valueOf("535D64");
+            iconColor = atmosphereColor = Color.valueOf("FFFA84");
             solarSystem = ryii;
             alwaysUnlocked = false;
             generator = new SeerkPlanetGenerator();
@@ -170,7 +170,7 @@ public class GenesisPlanets{
             accessible = false;
             hasAtmosphere = true;
             orbitSpacing = 1;
-            iconColor = Color.valueOf("535D64");
+            iconColor = atmosphereColor = Color.valueOf("895397");
             solarSystem = ryii;
             alwaysUnlocked = false;
             generator = new KikreaPlanetGenerator();
