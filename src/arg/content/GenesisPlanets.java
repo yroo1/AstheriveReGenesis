@@ -185,7 +185,6 @@ public class GenesisPlanets{
         return new Planet(name, parent, 0.12f){{
             hasAtmosphere = false;
             updateLighting = false;
-            sectors.add(new Sector(this, Ptile.empty));
             camRadius = 0.68f * scale;
             minZoom = 0.6f;
             drawOrbit = false;
