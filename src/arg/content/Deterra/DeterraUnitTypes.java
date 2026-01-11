@@ -72,12 +72,12 @@ public class DeterraUnitTypes{
                 top = false;
                 baseRotation = -15f;
                 shootCone = 180f;
-                bullet = new BasicBulletType(3.2f, 26){{
+                bullet = new BasicBulletType(3.2f, 22){{
                     homingPower = 0.19f;
                     homingDelay = 4f;
                     width = 7f;
                     height = 11f;
-                    lifetime = 70f;
+                    lifetime = 30f;
                 }};
             }});
         }};

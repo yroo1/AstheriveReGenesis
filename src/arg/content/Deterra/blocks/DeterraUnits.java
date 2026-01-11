@@ -18,16 +18,23 @@ import static mindustry.type.ItemStack.with;
 
 public class DeterraUnits {
     public static Block
-            mechAssembler;
+            mechAssembler,boatAssembler;
     public static void load() {
         {
             {
                 mechAssembler = new UnitFactory("mech-assembler"){{
                     requirements(Category.units, with(DeterraItems.quartz, 40, DeterraItems.magnetite,30));
                     plans.add(new UnitPlan(DeterraUnitTypes.saber, 12 * 60f, with(DeterraItems.quartz, 10,DeterraItems.magnetite, 15)));
-                    consumePower(60/60f);
+                    consumePower(80/60f);
                     size = 3;
                     researchCost = with(DeterraItems.quartz,120,DeterraItems.magnetite,80);
+                }};
+                boatAssembler = new UnitFactory("boat-assembler"){{
+                    requirements(Category.units, with(DeterraItems.quartz, 35, DeterraItems.magnetite,70, DeterraItems.polterite,20));
+                    plans.add(new UnitPlan(DeterraUnitTypes.tide, 14 * 60f, with(DeterraItems.quartz, 15,DeterraItems.carbon, 20)));
+                    consumePower(110/60f);
+                    size = 3;
+                    researchCost = with(DeterraItems.quartz,175,DeterraItems.magnetite,200,DeterraItems.polterite,50);
                 }};
             }
         }
