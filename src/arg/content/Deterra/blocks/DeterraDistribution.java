@@ -44,6 +44,15 @@ public class DeterraDistribution {
                     requirements(Category.distribution, with(DeterraItems.quartz, 4, DeterraItems.magnetite, 2));
                     researchCost = with(DeterraItems.quartz, 50,DeterraItems.magnetite,40);
                 }};
+                itemLauncher = new MassDriver("item-launcher"){{
+                    requirements(Category.distribution, with(DeterraItems.quartz, 20, DeterraItems.magnetite, 25,DeterraItems.polterite, 10));
+                    size = 2;
+                    itemCapacity = 12;
+                    reload = 70f;
+                    range = 12*8f;
+                    consumePower(1.75f);
+                    researchCost = with(DeterraItems.quartz, 100,DeterraItems.magnetite,120,DeterraItems.polterite,25);
+                }};
             }
         }
     }

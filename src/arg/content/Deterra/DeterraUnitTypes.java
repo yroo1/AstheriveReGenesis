@@ -69,9 +69,9 @@ public class DeterraUnitTypes{
                 reload = 48f;
                 x = 4.8f;
                 y = 2f;
-                top = false;
                 baseRotation = -15f;
                 shootCone = 180f;
+                layerOffset = -0.001f;
                 bullet = new BasicBulletType(3.2f, 22){{
                     homingPower = 0.19f;
                     homingDelay = 4f;
