@@ -16,7 +16,7 @@ import static mindustry.type.ItemStack.with;
 
 public class DeterraDistribution {
     public static Block
-            itemTube, itemOverpass, filter, splitter, itemGate;
+            itemTube, itemOverpass, filter, splitter, itemGate, itemLauncher;
     public static void load() {
         {
             {
