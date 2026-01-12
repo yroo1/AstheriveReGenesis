@@ -10,12 +10,12 @@ An ambitious Mindustry Java mod that add a new campaign that revolves around a n
 
 Early version, may have issues and things can change in the future.
 
-[gray[]]version: v0.3category0
+[gray[]]version: v0.32category0
 This is a revamp of discontinued mod called Astherive Genesis
 
-If you have issues with this mod let me know through Github. Or dm me, my username is yroo1.
+If you have issues with this mod let me know through the Github repo. Or dm me, my username is yroo1.
 '''
-subtitle: "v0.3-0"
-version: 0.3
+subtitle: "v0.32-0"
+version: 0.32
 minGameVersion: 154
 java: true
