@@ -67,6 +67,8 @@ public class BioBlock extends Block {
         public boolean fullyGrown=false;
         public float growProgress=-1;
         public int pulseCharge=0; //+1 everytime this block pulse
+        
+        public monarch = false; //Special boolean that determine if this is from monarch
 
         public ArrayList<Integer> possibleGrowDir = new ArrayList<>();
         public float drawPulseScale=0;
@@ -198,6 +200,7 @@ public class BioBlock extends Block {
             int growDir = possibleGrowDir.get(randomIndex);
             Tile targetTile = tile.nearby(growDir);
             targetTile.setBlock(block,team);
+            if(targetTile.build instanceof BioBlock.BioBuilding biobuild)biobuild.monarch=true;
         }
         public void drawPulse(TextureRegion sprite,float scale) {
             scale+=1f+growProgress;

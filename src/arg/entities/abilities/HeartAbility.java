@@ -25,7 +25,7 @@ public class HeartAbility extends Ability{
     public TextureRegion pulseRegion;
     public String pulseSuffix = "-pulse";
     public float layer = -1;
-    public int heartPower = 24;
+    public int heartPower = 20;
 
     protected float pulseTimer;
     protected float tilesize = 8; //idk why its here but it stays
@@ -59,12 +59,13 @@ public class HeartAbility extends Ability{
         Tile rootTile = world.tile((int)(Math.round(unit.x/tilesize)),(int)(Math.round(unit.y/tilesize)));
         if(Build.validPlace(Terraplasm.root, unit.team, rootTile.x, rootTile.y, 0)){
             rootTile.setBlock(Terraplasm.root,unit.team);
+            if(rootTile.build instanceof BioBlock.BioBuilding biobuild)biobuild.monarch=true;
         }
     }
     public void updatePulse(Unit unit){
         growRoot(unit);
-        for(int xm = -2;xm<=2;xm++){
-            for(int ym = -2;ym<=2;ym++){
+        for(int xm = -3;xm<=3;xm++){
+            for(int ym = -3;ym<=3;ym++){
                 Tile other = world.tile((int)(Math.round(unit.x/tilesize))+xm,(int)(Math.round(unit.y/tilesize))+ym);
                 if(other.build!=null){
                     if (other.build instanceof BioBlock.BioBuilding otherbuild) {
