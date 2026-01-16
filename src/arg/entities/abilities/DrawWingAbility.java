@@ -8,10 +8,13 @@ import mindustry.content.*;
 import mindustry.entities.*;
 import mindustry.gen.*;
 import mindustry.entities.abilities.*;
+import arc.*;
+import arc.graphics.g2d.*;
+import arc.scene.ui.layout.*;
+import mindustry.graphics.*;
 
 //it draws wing, nothing else.
 public class DrawWingAbility extends Ability{
-    public float interval = 3f;
     public float x, y, mag, interval;
     public TextureRegion wingRegion;
     public float layer = -1;
@@ -39,14 +42,12 @@ public class DrawWingAbility extends Ability{
     }
     @Override
     public void draw(Unit unit){
-        if(warmup > 0.001f){
-            float pz = Draw.z();
-            if(layer > 0) Draw.z(z);
+        float pz = Draw.z();
+        if(layer > 0) Draw.z(layer);
 
-            Draw.rect(wingRegion, unit.x-x, unit.y+y, unit.rotation - 90f + Mathf.sin(counter)*mag);
-            Draw.rect(wingRegion, unit.x+x, unit.y+y, unit.rotation - 90f + Mathf.sin(counter)*mag);
+        Draw.rect(wingRegion, unit.x-x, unit.y+y, unit.rotation - 90f + Mathf.sin(counter)*mag);
+        Draw.rect(wingRegion, unit.x+x, unit.y+y, unit.rotation - 90f + Mathf.sin(counter)*mag);
             
-            Draw.z(pz);
-        }
+        Draw.z(pz);
     }
 }

@@ -1,5 +1,6 @@
 package arg.content.terraplasm;
 
+import arc.*;
 import arc.graphics.*;
 import arc.math.Interp;
 import arc.graphics.g2d.*;
