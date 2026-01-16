@@ -19,12 +19,12 @@ public class DrawRegionAbility extends Ability{
     public String regionSuffix = "-region";
     public float layer = -1;
     
-    public DrawPulsingAbility(String regionSuffix){
+    public DrawRegionAbility(String regionSuffix){
         this.regionSuffix = regionSuffix;
         display = false;
     }
 
-    public DrawPulsingAbility(){
+    public DrawRegionAbility(){
         display = false;
     }
     

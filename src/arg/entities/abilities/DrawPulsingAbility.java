@@ -49,7 +49,7 @@ public class DrawPulsingAbility extends Ability{
         float pz = Draw.z();
         if(layer > 0) Draw.z(layer);
         
-        Draw.rect(pulseRegion, unit.x+Mathf.cosDeg(unit.rotation - 90f)*spread+x, unit.y+Mathf.sinDeg(unit.rotation - 90f)*spread+y, unit.rotation - 90f;
+        Draw.rect(pulseRegion, unit.x+Mathf.cosDeg(unit.rotation - 90f)*spread+x, unit.y+Mathf.sinDeg(unit.rotation - 90f)*spread+y, unit.rotation - 90f);
             
         Draw.z(pz);
     }
