@@ -149,7 +149,7 @@ public class TerraUnitTypes{
             omniMovement = false;
             rotateSpeed = 4.5f;
             circleTargetRadius = 30f;
-            abilities.add(new DrawWingAbility(2,0,Core.atlas.find("arg-floa-wing"),15,8));
+            abilities.add(new DrawWingAbility(8,0,15,8));
             weapons.add(new Weapon(){{
                 minShootVelocity = 1f;
                 x = 4f;

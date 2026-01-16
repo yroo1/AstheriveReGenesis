@@ -17,14 +17,14 @@ import mindustry.graphics.*;
 public class DrawWingAbility extends Ability{
     public float x, y, mag, interval;
     public TextureRegion wingRegion;
+    public String wingSuffix = "-wing";
     public float layer = -1;
 
     protected float counter;
 
-    public DrawWingAbility(float x, float y, TextureRegion wingRegion, float mag, float interval){
+    public DrawWingAbility(float x, float y, float mag, float interval){
         this.x = x;
         this.y = y;
-        this.wingRegion = wingRegion;
         this.mag = mag;
         this.interval = interval;
         display = false;
@@ -42,11 +42,14 @@ public class DrawWingAbility extends Ability{
     }
     @Override
     public void draw(Unit unit){
+        if(wingRegion == null){
+            wingRegion = Core.atlas.find(unit.type.name + wingSuffix, unit.type.region);
+        }
         float pz = Draw.z();
         if(layer > 0) Draw.z(layer);
 
-        Draw.rect(wingRegion, unit.x-x, unit.y+y, unit.rotation - 90f + Mathf.sin(counter)*mag);
-        Draw.rect(wingRegion, unit.x+x, unit.y+y, unit.rotation - 90f + Mathf.sin(counter)*mag);
+        Draw.rect(wingRegion, unit.x-Mathf.sin((unit.rotation + 90f)/Mathf.PI*2)*x, unit.y+Mathf.cos((unit.rotation + 90f)/Mathf.PI*2)*y, unit.rotation + 90f + Mathf.sin(counter)*mag);
+        Draw.rect(wingRegion, unit.x-Mathf.sin((unit.rotation - 90f)/Mathf.PI*2)*x, unit.y+Mathf.cos((unit.rotation - 90f)/Mathf.PI*2)*y, unit.rotation - 90f + Mathf.sin(counter)*mag);
             
         Draw.z(pz);
     }
