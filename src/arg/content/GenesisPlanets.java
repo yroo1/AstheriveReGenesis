@@ -181,7 +181,7 @@ public class GenesisPlanets{
         //rip verdara
         verdara = makeAsteroid("verdara", khessar, Blocks.stoneWall, Blocks.iceWall, -1, 0.5f, 12, 2f, gen -> {});
         //WHY IS THIS HERE
-        aeternus = makeAsteroid("aeternus", khessar, Blocks.stoneWall, Blocks.slag, 2023, 0.5f, 4, 3f, gen -> {});
+        aeternus = makeAsteroid("aeternus", khessar, Blocks.basalt, Blocks.slag, 2023, 0.5f, 4, 3f, gen -> {});
     }
     private static Planet makeAsteroid(String name, Planet parent, Block base, Block tint, int seed, float tintThresh, int pieces, float scale, Cons<AsteroidGenerator> cgen){
         return new Planet(name, parent, 0.12f){{

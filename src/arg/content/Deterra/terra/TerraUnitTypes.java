@@ -149,7 +149,7 @@ public class TerraUnitTypes{
             omniMovement = false;
             rotateSpeed = 4.5f;
             circleTargetRadius = 30f;
-            abilities.add(new DrawWingAbility(8,0,35,3));
+            abilities.add(new DrawWingAbility(40,0,35,60));
             weapons.add(new Weapon(){{
                 minShootVelocity = 1f;
                 x = 4f;
