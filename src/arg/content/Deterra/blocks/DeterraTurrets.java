@@ -92,7 +92,7 @@ public class DeterraTurrets {
                     health = 150;
                     maxAmmo = 5;
                     outlineColor = GenesisPal.deterraOutline;
-                    reload = 24f;
+                    reload = 17f;
                     inaccuracy = 3f;
                     size = 2;
                     recoil = 1f;
@@ -105,7 +105,7 @@ public class DeterraTurrets {
                     shootY = 1.5f;
 
                     ammo(
-                        DeterraItems.magnetite, new BasicBulletType(5.5f, 14) {{
+                        DeterraItems.magnetite, new BasicBulletType(5.5f, 10) {{
                             lifetime = 28f;
                             
                             width = 7f;
@@ -152,12 +152,13 @@ public class DeterraTurrets {
                     minWarmup = 0.85f;
                     shootWarmupSpeed = 0.06f;
                     shootY = -0.5f;
-                    shake = 2.7f;
+                    shake = 3.1f;
 
                     ammo(
-                        DeterraItems.polterite, new BasicBulletType(5.6f, 63) {{
-                            lifetime = 19f;
+                        DeterraItems.polterite, new BasicBulletType(7.1f, 63) {{
+                            lifetime = 24f;
                             
+                            ammoMultiplier = 1;
                             width = 12f;
                             height = 20f;
                             weaveMag = 2;
@@ -165,12 +166,12 @@ public class DeterraTurrets {
                             hitColor = backColor = trailColor = GenesisPal.polteriteDark;
                             frontColor = GenesisPal.polterite;
                             trailWidth = 3f;
-                            trailLength = 7;
+                            trailLength = 10;
                             shootEffect = new MultiEffect(Fx.shootBigColor, Fx.shootTitan);
                             smokeEffect = Fx.shootBigSmoke2;
                             fragBullets = 8;
                             fragLifeMin = 0f;
-                            fragRandomSpread = 0f;
+                            fragRandomSpread = 180f;
                     
                             fragBullet = new BasicBulletType(4f,7){{
                                 shootEffect = Fx.none;
