@@ -68,7 +68,7 @@ public class BioBlock extends Block {
         public float growProgress=-1;
         public int pulseCharge=0; //+1 everytime this block pulse
         
-        public monarch = false; //Special boolean that determine if this is from monarch
+        public boolean monarch = false; //Special boolean that determine if this is from monarch
 
         public ArrayList<Integer> possibleGrowDir = new ArrayList<>();
         public float drawPulseScale=0;
