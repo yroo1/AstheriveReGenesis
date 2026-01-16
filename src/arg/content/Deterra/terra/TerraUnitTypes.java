@@ -185,7 +185,7 @@ public class TerraUnitTypes{
         }};
         monarch = new TerraBossUnitType("monarch"){{
             constructor = LegsUnit::create;
-            speed = 0.3f;
+            speed = 0.2f;
             drag = 0.3f;
             hitSize = 30f;
             rotateSpeed = 0.7f;
@@ -201,13 +201,14 @@ public class TerraUnitTypes{
             legPairOffset = 3;
             legStraightness = 0.4f;
             legLengthScl = 0.9f;
-            legSplashDamage = 17;
+            legSplashDamage = 28;
+            legSplashRange = 16;
             hovering = true;
 
             shadowElevation = 0.9f;
             groundLayer = Layer.legUnit + 1f;
             
-            abilities.add(new HeartAbility("-heart",0,0,8,80));
+            abilities.add(new HeartAbility("-heart",0,0,8,90));
             abilities.add(new DrawRegionAbility("-heart-top"));
         }};
     }
