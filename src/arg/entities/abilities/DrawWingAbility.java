@@ -48,8 +48,8 @@ public class DrawWingAbility extends Ability{
         float pz = Draw.z();
         if(layer > 0) Draw.z(layer);
 
-        Draw.rect(wingRegion, unit.x-Mathf.cosDeg(unit.rotation + 90f)*x, unit.y+Mathf.sinDeg(unit.rotation + 90f)*y, unit.rotation + 90f + Mathf.sin(counter)*mag);
-        Draw.rect(wingRegion, unit.x-Mathf.cosDeg(unit.rotation - 90f)*x, unit.y+Mathf.sinDeg(unit.rotation - 90f)*y, unit.rotation - 90f + Mathf.sin(counter)*mag);
+        Draw.rect(wingRegion, unit.x-Mathf.cosDeg(unit.rotation - 90f)*x, unit.y+Mathf.sinDeg(unit.rotation - 90f)*y, unit.rotation + 90f + Mathf.sin(counter)*mag);
+        Draw.rect(wingRegion, unit.x-Mathf.cosDeg(unit.rotation + 90f)*x, unit.y+Mathf.sinDeg(unit.rotation + 90f)*y, unit.rotation - 90f - Mathf.sin(counter)*mag);
             
         Draw.z(pz);
     }
