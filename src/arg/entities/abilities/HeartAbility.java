@@ -12,27 +12,30 @@ import arc.*;
 import arc.graphics.g2d.*;
 import arc.scene.ui.layout.*;
 import mindustry.graphics.*;
+import arg.world.blocks.terraplasm.*;
 
 //it draws scary pulsing TextureRegion
 //Only support y offset for a very mysterious reason
-public class DrawPulsingAbility extends Ability{
-    public float y, mag, interval;
+public class HeartAbility extends Ability{
+    public float y, mag, bpm;
     public TextureRegion pulseRegion;
     public String pulseSuffix = "-pulse";
     public float layer = -1;
+    public int heartPower = 24;
 
-    protected float counter;
+    protected float pulseTimer;
 
-    public DrawPulsingAbility(String pulseSuffix, float x, float y, float mag, float interval){
+    public HeartAbility(String pulseSuffix, float x, float y, float mag, float bpm){
         this.pulseSuffix = pulseSuffix;
         //this.x = no lol
         this.y = y;
         this.mag = mag;
-        this.interval = interval;
+        this.bpm = bpm;
+        this.pulseTimer = 3600/bpm;
         display = false;
     }
 
-    public DrawPulsingAbility(){
+    public HeartAbility(){
         display = false;
     }
 
@@ -40,7 +43,25 @@ public class DrawPulsingAbility extends Ability{
     public void update(Unit unit){
         super.update(unit);
         
-        counter+=Time.delta;
+        pulseTimer-=Time.delta;
+        if(pulseTimer<=0){
+            pulseTimer = 3600/bpm;
+            updatePulse()
+        }
+    }
+    public void updatePulse(){
+        for(int xm = -2;xm<=2;xm++){
+            for(int ym = -2;ym<=2;ym++){
+                Tile other = world.tile((int)(Math.round(unit.x/tilesize))+xm,(int)(Math.round(unit.y/tilesize))+ym);
+                if(other.build!=null){
+                    if (other.build instanceof BioBlock.BioBuilding otherbuild) {
+                        if (!otherbuild.pulsed) {                        
+                            otherbuild.biopulse=Math.max(otherbuild.biopulse,heartPower);
+                        }
+                    }
+                }
+            }
+        }
     }
     @Override
     public void draw(Unit unit){
