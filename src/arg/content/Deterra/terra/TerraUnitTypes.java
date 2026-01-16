@@ -201,7 +201,7 @@ public class TerraUnitTypes{
             shadowElevation = 1.5f;
             groundLayer = Layer.legUnit + 1f;
             
-            abilities.add(new DrawPulseAbility("-heart",0,0,8,45));
+            abilities.add(new DrawPulsingAbility("-heart",0,0,8,45));
             abilities.add(new DrawRegionAbility("-heart-top"));
         }};
     }

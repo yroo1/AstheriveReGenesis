@@ -14,8 +14,9 @@ import arc.scene.ui.layout.*;
 import mindustry.graphics.*;
 
 //it draws scary pulsing TextureRegion
+//Only support y offset for a very mysterious reason
 public class DrawPulsingAbility extends Ability{
-    public float x, y, mag, interval;
+    public float y, mag, interval;
     public TextureRegion pulseRegion;
     public String pulseSuffix = "-pulse";
     public float layer = -1;
@@ -24,7 +25,7 @@ public class DrawPulsingAbility extends Ability{
 
     public DrawPulsingAbility(String pulseSuffix, float x, float y, float mag, float interval){
         this.pulseSuffix = pulseSuffix;
-        this.x = x;
+        //this.x = no lol
         this.y = y;
         this.mag = mag;
         this.interval = interval;
@@ -49,7 +50,7 @@ public class DrawPulsingAbility extends Ability{
         float pz = Draw.z();
         if(layer > 0) Draw.z(layer);
         
-        Draw.rect(pulseRegion, unit.x+Mathf.cosDeg(unit.rotation - 90f)*spread+x, unit.y+Mathf.sinDeg(unit.rotation - 90f)*spread+y, unit.rotation - 90f);
+        Draw.rect(pulseRegion, unit.x+Mathf.cosDeg(unit.rotation - 90f)*y, unit.y+Mathf.sinDeg(unit.rotation - 90f)*y, unit.rotation - 90f);
             
         Draw.z(pz);
     }
