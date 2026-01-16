@@ -148,7 +148,7 @@ public class DeterraTurrets {
                     range = 17 * Vars.tilesize;
                     rotateSpeed = 1.5f;
                     squareSprite = true;
-                    shootSound = Sounds.shootTitan;
+                    shootSound = Sounds.shootTank;
                     minWarmup = 0.85f;
                     shootWarmupSpeed = 0.06f;
                     shootY = 0f;
