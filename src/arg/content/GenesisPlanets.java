@@ -27,7 +27,7 @@ public class GenesisPlanets{
     //planets
     deterra,seerk,kikrea,
     //asteroids..?
-    verdara,aeternus,
+    verdara,aeternus,nyle,
     //moon
     thrata;
 
