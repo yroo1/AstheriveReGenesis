@@ -226,17 +226,34 @@ public class TerraUnitTypes{
                     damage = 20;
                     speed = 7f;
                     puddleSize = 28f;
-                    orbSize = 14f;
+                    orbSize = 8f;
                     drag = 0.04f;
                     shootEffect = GenesisFx.shootMonarch;
                     lifetime = 120f;
                     collidesAir = false;
+                    intervalBullet = new LiquidBulletType(GenesisLiquids.biomass){{
+                        drag = 0.04f;
+                        damage = 8;
+                        speed = 6f;
+                    }};
+                    hitEffect = despawnEffect = new WaveEffect(){{
+                        colorFrom = colorTo = GenesisPal.biomass;
+                        sizeTo = 4f;
+                        strokeFrom = 4f;
+                        lifetime = 30f;
+                    }};
+                    bulletInterval = 7f;
+                    intervalRandomSpread = 20f;
+                    intervalBullets = 2;
+                    intervalAngle = 180f;
+                    intervalSpread = 300f;
                 }};
             }});
             weapons.add(new Weapon("arg-monarch-arm-r"){{
                 shootX = 5f;
                 shootY = 20f;
                 reload = 180f;
+                
                 ejectEffect = Fx.none;
                 recoil = 9f;
                 x = 23f;
@@ -248,11 +265,27 @@ public class TerraUnitTypes{
                     damage = 20;
                     speed = 7f;
                     puddleSize = 28f;
-                    orbSize = 14f;
+                    orbSize = 8f;
                     drag = 0.04f;
                     shootEffect = GenesisFx.shootMonarch;
                     lifetime = 120f;
                     collidesAir = false;
+                    intervalBullet = new LiquidBulletType(GenesisLiquids.biomass){{
+                        drag = 0.04f;
+                        damage = 8;
+                        speed = 6f;
+                    }};
+                    hitEffect = despawnEffect = new WaveEffect(){{
+                        colorFrom = colorTo = GenesisPal.biomass;
+                        sizeTo = 4f;
+                        strokeFrom = 4f;
+                        lifetime = 30f;
+                    }};
+                    bulletInterval = 7f;
+                    intervalRandomSpread = 20f;
+                    intervalBullets = 2;
+                    intervalAngle = 180f;
+                    intervalSpread = 300f;
                 }};
             }});
         }};
