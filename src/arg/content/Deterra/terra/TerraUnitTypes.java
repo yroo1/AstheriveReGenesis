@@ -224,7 +224,7 @@ public class TerraUnitTypes{
                     damage = 20;
                     speed = 6f;
                     drag = 0.1f;
-                    shootEffect = Fx.shootMonarch;
+                    shootEffect = GenesisFx.shootMonarch;
                     lifetime = 120f;
                     collidesAir = false;
                 }};
@@ -242,7 +242,7 @@ public class TerraUnitTypes{
                     damage = 20;
                     speed = 6f;
                     drag = 0.1f;
-                    shootEffect = Fx.shootMonarch;
+                    shootEffect = GenesisFx.shootMonarch;
                     lifetime = 120f;
                     collidesAir = false;
                 }};
