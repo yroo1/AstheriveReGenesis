@@ -29,6 +29,7 @@ public class HeartAbility extends Ability{
 
     protected float pulseTimer;
     protected float tilesize = 8; //idk why its here but it stays
+    protected float drawPulseScale = 0;
 
     public HeartAbility(String pulseSuffix, float x, float y, float mag, float bpm){
         this.pulseSuffix = pulseSuffix;
@@ -53,6 +54,9 @@ public class HeartAbility extends Ability{
             pulseTimer = 3600/bpm;
             updatePulse(unit);
         }
+        if (drawPulseScale>0.01f) {
+            drawPulseScale*=0.85f;
+        }
     }
     public void growRoot(Unit unit){
         //this only grow a single root that grows more roots
@@ -76,6 +80,7 @@ public class HeartAbility extends Ability{
                 }
             }
         }
+        drawPulseScale = 0.5f;
     }
     @Override
     public void draw(Unit unit){
@@ -85,7 +90,9 @@ public class HeartAbility extends Ability{
         float pz = Draw.z();
         if(layer > 0) Draw.z(layer);
         
+        Draw.scl(1f+drawPulseScale,1f+drawPulseScale);
         Draw.rect(pulseRegion, unit.x+Mathf.cosDeg(unit.rotation - 90f)*y, unit.y+Mathf.sinDeg(unit.rotation - 90f)*y, unit.rotation - 90f);
+        Draw.scl(1,1);
             
         Draw.z(pz);
     }

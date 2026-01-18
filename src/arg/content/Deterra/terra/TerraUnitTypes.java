@@ -217,19 +217,22 @@ public class TerraUnitTypes{
                 shootY = 20f;
                 reload = 180f;
                 ejectEffect = Fx.none;
-                recoil = 9f;
+                recoil = 8f;
                 x = -23f;
                 mirror = false;
                 shootSound = Sounds.shootTank;
-                shake = 2;
+                shake = 3;
 
                 bullet = new LiquidBulletType(GenesisLiquids.biomass){{
                     damage = 80;
+                    splashDamage = 80;
+                    splashDamageRadius = 32;
                     pierce = pierceBuilding = true;
                     pierceCap = 8; 
                     speed = 3.8f;
                     puddleSize = 28f;
                     orbSize = 8f;
+                    despawnShake = 2;
                     shootEffect = GenesisFx.shootMonarch;
                     lifetime = 60f;
                     collidesAir = false;
@@ -240,36 +243,38 @@ public class TerraUnitTypes{
                     }};
                     hitEffect = despawnEffect = new WaveEffect(){{
                         colorFrom = colorTo = GenesisPal.biomass;
-                        sizeTo = 18f;
+                        sizeTo = 30f;
                         strokeFrom = 5f;
-                        lifetime = 55f;
+                        lifetime = 20f;
                     }};
-                    bulletInterval = 12f;
-                    intervalRandomSpread = 10f;
+                    bulletInterval = 20f;
+                    intervalRandomSpread = 2f;
                     intervalBullets = 2;
-                    intervalAngle = -30f;
-                    intervalSpread = 330f;
+                    intervalAngle = 0f;
+                    intervalSpread = 10f;
                 }};
             }});
-            weapons.add(new Weapon("arg-monarch-arm-r"){{
-                shootX = 5f;
+            weapons.add(new Weapon("arg-monarch-arm-l"){{
+                shootX = -5f;
                 shootY = 20f;
                 reload = 180f;
-                
                 ejectEffect = Fx.none;
-                recoil = 9f;
-                x = 23f;
+                recoil = 8f;
+                x = -23f;
                 mirror = false;
                 shootSound = Sounds.shootTank;
-                shake = 2;
+                shake = 3;
 
                 bullet = new LiquidBulletType(GenesisLiquids.biomass){{
                     damage = 80;
+                    splashDamage = 80;
+                    splashDamageRadius = 32;
                     pierce = pierceBuilding = true;
                     pierceCap = 8; 
                     speed = 3.8f;
                     puddleSize = 28f;
                     orbSize = 8f;
+                    despawnShake = 2;
                     shootEffect = GenesisFx.shootMonarch;
                     lifetime = 60f;
                     collidesAir = false;
@@ -280,15 +285,41 @@ public class TerraUnitTypes{
                     }};
                     hitEffect = despawnEffect = new WaveEffect(){{
                         colorFrom = colorTo = GenesisPal.biomass;
-                        sizeTo = 18f;
+                        sizeTo = 30f;
                         strokeFrom = 5f;
-                        lifetime = 55f;
+                        lifetime = 20f;
                     }};
-                    bulletInterval = 12f;
-                    intervalRandomSpread = 10f;
+                    bulletInterval = 20f;
+                    intervalRandomSpread = 2f;
                     intervalBullets = 2;
-                    intervalAngle = -30f;
-                    intervalSpread = 330f;
+                    intervalAngle = 0f;
+                    intervalSpread = 10f;
+                }};
+            }});
+            weapons.add(new Weapon()){{
+                shootY = 15f;
+                reload = 240f;
+                ejectEffect = Fx.none;
+                mirror = false;
+                shake = 1;
+                shootCone = 180f;
+                shootSound = Sounds.explosionCrawler;
+                shootSoundVolume = 0.4f;
+                x = 0f;
+                bullet = new BulletType(){{
+                    collidesTiles = false;
+                    collides = false;
+                    spawnUnit = floa;
+                    shootEffect = new WaveEffect(){{
+                        colorFrom = colorTo = GenesisPal.biomass;
+                        sizeTo = 40f;
+                        strokeFrom = 5f;
+                        lifetime = 20f;
+                    }};
+                    speed = 0f;
+                    instantDisappear = true;
+                    hittable = false;
+                    collidesAir = true;
                 }};
             }});
         }};
