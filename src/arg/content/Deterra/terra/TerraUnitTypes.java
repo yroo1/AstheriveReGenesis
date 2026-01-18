@@ -224,30 +224,31 @@ public class TerraUnitTypes{
                 shake = 2;
 
                 bullet = new LiquidBulletType(GenesisLiquids.biomass){{
-                    damage = 20;
-                    speed = 7f;
+                    damage = 80;
+                    pierce = pierceBuilding = true;
+                    pierceCap = 8; 
+                    speed = 3.8f;
                     puddleSize = 28f;
                     orbSize = 8f;
-                    drag = 0.04f;
                     shootEffect = GenesisFx.shootMonarch;
-                    lifetime = 120f;
+                    lifetime = 60f;
                     collidesAir = false;
                     intervalBullet = new LiquidBulletType(GenesisLiquids.biomass){{
                         drag = 0.04f;
                         damage = 8;
-                        speed = 6f;
+                        speed = 3f;
                     }};
                     hitEffect = despawnEffect = new WaveEffect(){{
                         colorFrom = colorTo = GenesisPal.biomass;
-                        sizeTo = 4f;
-                        strokeFrom = 4f;
-                        lifetime = 30f;
+                        sizeTo = 18f;
+                        strokeFrom = 5f;
+                        lifetime = 55f;
                     }};
-                    bulletInterval = 7f;
-                    intervalRandomSpread = 20f;
+                    bulletInterval = 12f;
+                    intervalRandomSpread = 10f;
                     intervalBullets = 2;
-                    intervalAngle = 180f;
-                    intervalSpread = 300f;
+                    intervalAngle = -30f;
+                    intervalSpread = 330f;
                 }};
             }});
             weapons.add(new Weapon("arg-monarch-arm-r"){{
@@ -263,30 +264,31 @@ public class TerraUnitTypes{
                 shake = 2;
 
                 bullet = new LiquidBulletType(GenesisLiquids.biomass){{
-                    damage = 20;
-                    speed = 7f;
+                    damage = 80;
+                    pierce = pierceBuilding = true;
+                    pierceCap = 8; 
+                    speed = 3.8f;
                     puddleSize = 28f;
                     orbSize = 8f;
-                    drag = 0.04f;
                     shootEffect = GenesisFx.shootMonarch;
-                    lifetime = 120f;
+                    lifetime = 60f;
                     collidesAir = false;
                     intervalBullet = new LiquidBulletType(GenesisLiquids.biomass){{
                         drag = 0.04f;
                         damage = 8;
-                        speed = 6f;
+                        speed = 3f;
                     }};
                     hitEffect = despawnEffect = new WaveEffect(){{
                         colorFrom = colorTo = GenesisPal.biomass;
-                        sizeTo = 4f;
-                        strokeFrom = 4f;
-                        lifetime = 30f;
+                        sizeTo = 18f;
+                        strokeFrom = 5f;
+                        lifetime = 55f;
                     }};
-                    bulletInterval = 7f;
-                    intervalRandomSpread = 20f;
+                    bulletInterval = 12f;
+                    intervalRandomSpread = 10f;
                     intervalBullets = 2;
-                    intervalAngle = 180f;
-                    intervalSpread = 300f;
+                    intervalAngle = -30f;
+                    intervalSpread = 330f;
                 }};
             }});
         }};
