@@ -200,7 +200,7 @@ public class BioBlock extends Block {
             int growDir = possibleGrowDir.get(randomIndex);
             Tile targetTile = tile.nearby(growDir);
             targetTile.setBlock(block,team);
-            if(targetTile.build instanceof BioBlock.BioBuilding biobuild)biobuild.monarch=true;
+            if(monarch&&targetTile.build instanceof BioBlock.BioBuilding biobuild)biobuild.monarch=true;
         }
         public void drawPulse(TextureRegion sprite,float scale) {
             scale+=1f+growProgress;
@@ -232,6 +232,7 @@ public class BioBlock extends Block {
             write.bool(pulsed);
             write.bool(fullyGrown);
             write.f(growProgress);
+            write.bool(monarch);
         }
 
         @Override
@@ -245,6 +246,7 @@ public class BioBlock extends Block {
             pulsed=read.bool();
             fullyGrown=read.bool();
             growProgress=read.f();
+            monarch=read.bool();
         }
     }
 }
