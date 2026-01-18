@@ -80,7 +80,7 @@ public class HeartAbility extends Ability{
                 }
             }
         }
-        drawPulseScale = 0.5f;
+        drawPulseScale = 0.3f;
     }
     @Override
     public void draw(Unit unit){

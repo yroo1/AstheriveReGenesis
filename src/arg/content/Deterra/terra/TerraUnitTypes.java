@@ -190,7 +190,7 @@ public class TerraUnitTypes{
             drag = 0.3f;
             hitSize = 30f;
             rotateSpeed = 0.7f;
-            targetAir = true;
+            targetAir = false;
             health = 1200;
             
             legCount = 8;
@@ -298,11 +298,11 @@ public class TerraUnitTypes{
             }});
             weapons.add(new Weapon(){{
                 alwaysShooting = true;
-                shootY = 15f;
-                reload = 240f;
+                shootY = 13f;
+                reload = 320f;
                 ejectEffect = Fx.none;
                 mirror = false;
-                shake = 1;
+                shake = 2;
                 shootCone = 180f;
                 shootSound = Sounds.explosionCrawler;
                 shootSoundVolume = 0.4f;
@@ -313,8 +313,8 @@ public class TerraUnitTypes{
                     spawnUnit = floa;
                     shootEffect = new WaveEffect(){{
                         colorFrom = colorTo = GenesisPal.biomass;
-                        sizeTo = 40f;
-                        strokeFrom = 5f;
+                        sizeTo = 35f;
+                        strokeFrom = 4f;
                         lifetime = 20f;
                     }};
                     speed = 0f;
