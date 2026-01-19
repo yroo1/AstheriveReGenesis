@@ -244,7 +244,7 @@ public class DeterraTurrets {
                             trailLength = 35;
                             shootEffect = new MultiEffect(Fx.shootBigColor, Fx.shootTitan);
                             smokeEffect = Fx.shootBigSmoke2;
-                        }};
+                        }}
                     );
                     drawer = new DrawTurret(){{
                         parts.add(
