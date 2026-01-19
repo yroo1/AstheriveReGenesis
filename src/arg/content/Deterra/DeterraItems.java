@@ -6,7 +6,7 @@ import mindustry.type.*;
 
 public class DeterraItems{
     public static Item
-    quartz, magnetite, carbon, polterite, nylon;
+    quartz, magnetite, carbon, polterite, terraCompound;
     public static final Seq<Item> deterraItems = new Seq<>();
 
     public static void load(){

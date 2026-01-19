@@ -35,7 +35,7 @@ import static mindustry.Vars.*;
 
 public class DeterraTurrets {
     public static Block
-            fracture,frail,blare;
+            fracture,frail,blare,strife;
     public static void load() {
         {
             {
