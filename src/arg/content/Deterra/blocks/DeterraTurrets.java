@@ -35,7 +35,7 @@ import static mindustry.Vars.*;
 
 public class DeterraTurrets {
     public static Block
-            fracture,frail,blare;
+            fracture,frail,blare,strife;
     public static void load() {
         {
             {
@@ -189,6 +189,79 @@ public class DeterraTurrets {
                                 mirror = false;
                                 under = true;
                                 moveY = -2.5f;
+                            }}
+                        );
+                    }};
+                }};
+                strife = new ItemTurret("strife"){{
+                    requirements(Category.turret, with(DeterraItems.quartz, 50, DeterraItems.magnetite, 80, DeterraItems.polterite, 60));
+                    researchCost = with(DeterraItems.quartz, 50, DeterraItems.magnetite, 50, DeterraItems.polterite, 50);
+  
+                    health = 390;
+                    maxAmmo = 10;
+                    ammoPerShot = 5;
+                    outlineColor = GenesisPal.deterraOutline;
+                    reload = 180f;
+                    inaccuracy = 0f;
+                    size = 3;
+                    recoil = 2f;
+                    range = 20 * Vars.tilesize;
+                    rotateSpeed = 1f;
+                    squareSprite = true;
+                    shootSound = Sounds.shootTank;
+                    minWarmup = 0.85f;
+                    shootWarmupSpeed = 0.03f;
+                    shootY = 0f;
+                    shake = 3.6f;
+
+                    ammo(
+                        DeterraItems.polterite, new BasicBulletType(15f, 97) {{
+                            lifetime = 11f;
+                            
+                            ammoMultiplier = 2;
+                            width = 8f;
+                            height = 20f;
+                            weaveMag = 2;
+                            hitEffect = despawnEffect = Fx.hitBulletColor;
+                            hitColor = backColor = trailColor = GenesisPal.polteriteDark;
+                            frontColor = GenesisPal.polterite;
+                            trailWidth = 3f;
+                            trailLength = 10;
+                            shootEffect = new MultiEffect(Fx.shootBigColor, Fx.shootTitan);
+                            smokeEffect = Fx.shootBigSmoke2;
+                        }},
+                        DeterraItems.terraCompound, new BasicBulletType(15f, 153) {{
+                            lifetime = 11f;
+                            
+                            ammoMultiplier = 1;
+                            width = 10f;
+                            height = 25f;
+                            weaveMag = 2;
+                            hitEffect = despawnEffect = new MultiEffect(Fx.hitBulletColor, Fx.hitBulletBig);
+                            hitColor = backColor = trailColor = GenesisPal.polteriteDark;
+                            frontColor = GenesisPal.polterite;
+                            trailWidth = 5f;
+                            trailLength = 35;
+                            shootEffect = new MultiEffect(Fx.shootBigColor, Fx.shootTitan);
+                            smokeEffect = Fx.shootBigSmoke2;
+                        }}
+                    );
+                    drawer = new DrawTurret(){{
+                        parts.add(
+                            new RegionPart("-side"){{
+                                progress = PartProgress.warmup;
+                                mirror = true;
+                                under = true;
+                                moveX = -1.5f;
+                            }}
+                        );
+                        parts.add(
+                            new RegionPart("-front"){{
+                                progress = PartProgress.recoil;
+                                heatProgress = PartProgress.recoil;
+                                mirror = true;
+                                under = true;
+                                moveY = -3f;
                             }}
                         );
                     }};

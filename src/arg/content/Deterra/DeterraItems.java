@@ -6,7 +6,7 @@ import mindustry.type.*;
 
 public class DeterraItems{
     public static Item
-    quartz, magnetite, carbon, polterite, nylon;
+    quartz, magnetite, carbon, polterite, terraCompound;
     public static final Seq<Item> deterraItems = new Seq<>();
 
     public static void load(){
@@ -31,13 +31,15 @@ public class DeterraItems{
             cost = 0.8f;
         }};
 
-        nylon = new Item("nylon", Color.valueOf("7AC194")){{
-            hardness = 5;
-            cost = 1.5f;
+        terraCompound = new Item("terra-compound", Color.valueOf("6F8F6C")){{
+            hardness = 20;
+            cost = 5f;
+            charge = 8f;
+            radioactivity = 2f;
         }};
         
         deterraItems.addAll(
-        quartz, magnetite, carbon, polterite, nylon
+        quartz, magnetite, carbon, polterite, terraCompound
         );
     }
 }

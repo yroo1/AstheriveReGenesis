@@ -23,7 +23,7 @@ public class DeterraProduction {
     public static Block
     jaggedDrill, cliffBore, clusterDrill,
 
-    polteritePress, nylonSynthesizer;
+    polteritePress;
     public static void load() {
         jaggedDrill = new Drill("jagged-drill"){{
             requirements(Category.production, with(DeterraItems.quartz, 10, DeterraItems.magnetite, 5));
@@ -81,6 +81,7 @@ public class DeterraProduction {
             craftTime = 150f;
             outputItem = new ItemStack(DeterraItems.polterite, 2);
         }};
+        /*
         nylonSynthesizer = new GenericCrafter("nylon-synthesizer"){{
             requirements(Category.crafting, with(DeterraItems.quartz, 75, DeterraItems.magnetite, 100, DeterraItems.polterite, 50));
             
@@ -109,5 +110,6 @@ public class DeterraProduction {
             craftTime = 300f;
             outputItem = new ItemStack(DeterraItems.nylon, 2);
         }};
+        */
     }
 }

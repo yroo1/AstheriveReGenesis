@@ -11,6 +11,10 @@ public class GenesisPal{
     bioGreen = Color.valueOf("91A259"),
     terraPurple = Color.valueOf("A793B4"),
     terraCyan = Color.valueOf("93B3B4"),
+    
+    biomass = Color.valueOf("98915E"),
+    biomassLight = Color.valueOf("D4C98A"),
+    biomassDark = Color.valueOf("524809"),
 
     lightNylon = Color.valueOf("ABEBD5"), //what
     

@@ -67,6 +67,8 @@ public class BioBlock extends Block {
         public boolean fullyGrown=false;
         public float growProgress=-1;
         public int pulseCharge=0; //+1 everytime this block pulse
+        
+        public boolean monarch = false; //Special boolean that determine if this is from monarch
 
         public ArrayList<Integer> possibleGrowDir = new ArrayList<>();
         public float drawPulseScale=0;
@@ -186,7 +188,7 @@ public class BioBlock extends Block {
                     }
                 }
                 Random random = new Random();
-                if (isRoot&&possibleGrowDir.size()>0&&biopulse>1&&allowRoot&&pulseCharge>=pulseToGrowRoot){
+                if (isRoot&&possibleGrowDir.size()>0&&biopulse>1&&allowRoot&&(pulseCharge>=pulseToGrowRoot||monarch)){
                     pulseCharge=0;
                     growRoot();
                 }
@@ -198,6 +200,7 @@ public class BioBlock extends Block {
             int growDir = possibleGrowDir.get(randomIndex);
             Tile targetTile = tile.nearby(growDir);
             targetTile.setBlock(block,team);
+            if(monarch&&targetTile.build instanceof BioBlock.BioBuilding biobuild)biobuild.monarch=true;
         }
         public void drawPulse(TextureRegion sprite,float scale) {
             scale+=1f+growProgress;
@@ -229,6 +232,7 @@ public class BioBlock extends Block {
             write.bool(pulsed);
             write.bool(fullyGrown);
             write.f(growProgress);
+            write.bool(monarch);
         }
 
         @Override
@@ -242,6 +246,7 @@ public class BioBlock extends Block {
             pulsed=read.bool();
             fullyGrown=read.bool();
             growProgress=read.f();
+            monarch=read.bool();
         }
     }
 }

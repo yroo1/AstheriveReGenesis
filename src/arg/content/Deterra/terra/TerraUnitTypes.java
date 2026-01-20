@@ -23,6 +23,7 @@ import mindustry.content.*;
 import mindustry.entities.abilities.*;
 import mindustry.world.meta.*;
 import arg.entities.abilities.*;
+import arg.graphics.GenesisPal;
 
 import static arc.graphics.g2d.Draw.*;
 import static arc.graphics.g2d.Lines.*;
@@ -185,24 +186,144 @@ public class TerraUnitTypes{
         }};
         monarch = new TerraBossUnitType("monarch"){{
             constructor = LegsUnit::create;
-            speed = 0.4f;
+            speed = 0.2f;
             drag = 0.3f;
             hitSize = 30f;
             rotateSpeed = 0.7f;
-            targetAir = true;
-            health = 1200;
+            targetAir = false;
+            health = 9200;
             
-            legCount = 4;
-            legLength = 72f;
+            legCount = 8;
+            legLength = 40f;
             legForwardScl = 0.6f;
-            legMoveSpace = 1.4f;
+            legMoveSpace = 0.8f;
+            legBaseOffset = 20;
+            legExtension = 8;
+            legPairOffset = 3;
+            legStraightness = 0.4f;
+            legLengthScl = 0.9f;
+            legSplashDamage = 28;
+            legSplashRange = 16;
             hovering = true;
 
-            shadowElevation = 1.5f;
+            shadowElevation = 0.9f;
             groundLayer = Layer.legUnit + 1f;
             
-            abilities.add(new DrawPulsingAbility("-heart",0,0,8,45));
+            abilities.add(new HeartAbility("-heart",0,0,8,90));
             abilities.add(new DrawRegionAbility("-heart-top"));
+            
+            weapons.add(new Weapon("arg-monarch-arm-l"){{
+                shootX = -5f;
+                shootY = 20f;
+                reload = 180f;
+                ejectEffect = Fx.none;
+                recoil = 8f;
+                x = -23f;
+                mirror = false;
+                shootSound = Sounds.shootTank;
+                shake = 3;
+
+                bullet = new LiquidBulletType(GenesisLiquids.biomass){{
+                    damage = 80;
+                    splashDamage = 80;
+                    splashDamageRadius = 32;
+                    pierce = pierceBuilding = true;
+                    pierceCap = 8; 
+                    speed = 3.8f;
+                    puddleSize = 28f;
+                    orbSize = 8f;
+                    despawnShake = 2;
+                    shootEffect = GenesisFx.shootMonarch;
+                    lifetime = 60f;
+                    collidesAir = false;
+                    intervalBullet = new LiquidBulletType(GenesisLiquids.biomass){{
+                        drag = 0.04f;
+                        damage = 8;
+                        speed = 3f;
+                    }};
+                    hitEffect = despawnEffect = new WaveEffect(){{
+                        colorFrom = colorTo = GenesisPal.biomass;
+                        sizeTo = 30f;
+                        strokeFrom = 5f;
+                        lifetime = 20f;
+                    }};
+                    bulletInterval = 20f;
+                    intervalRandomSpread = 2f;
+                    intervalBullets = 2;
+                    intervalAngle = 0f;
+                    intervalSpread = 10f;
+                }};
+            }});
+            weapons.add(new Weapon("arg-monarch-arm-r"){{
+                shootX = 5f;
+                shootY = 20f;
+                reload = 180f;
+                ejectEffect = Fx.none;
+                recoil = 8f;
+                x = 23f;
+                mirror = false;
+                shootSound = Sounds.shootTank;
+                shake = 3;
+
+                bullet = new LiquidBulletType(GenesisLiquids.biomass){{
+                    damage = 80;
+                    splashDamage = 80;
+                    splashDamageRadius = 32;
+                    pierce = pierceBuilding = true;
+                    pierceCap = 8; 
+                    speed = 3.8f;
+                    puddleSize = 28f;
+                    orbSize = 8f;
+                    despawnShake = 2;
+                    shootEffect = GenesisFx.shootMonarch;
+                    lifetime = 60f;
+                    collidesAir = false;
+                    intervalBullet = new LiquidBulletType(GenesisLiquids.biomass){{
+                        drag = 0.04f;
+                        damage = 8;
+                        speed = 3f;
+                    }};
+                    hitEffect = despawnEffect = new WaveEffect(){{
+                        colorFrom = colorTo = GenesisPal.biomass;
+                        sizeTo = 30f;
+                        strokeFrom = 5f;
+                        lifetime = 20f;
+                    }};
+                    bulletInterval = 20f;
+                    intervalRandomSpread = 2f;
+                    intervalBullets = 2;
+                    intervalAngle = 0f;
+                    intervalSpread = 10f;
+                }};
+            }});
+            weapons.add(new Weapon(){{
+                alwaysShooting = true;
+                shootY = 13f;
+                reload = 320f;
+                ejectEffect = Fx.none;
+                mirror = false;
+                shake = 2;
+                shootCone = 180f;
+                shootSound = Sounds.explosionCrawler;
+                shootSoundVolume = 0.4f;
+                x = 0f;
+                bullet = new BulletType(){{
+                    inaccuracy = 180f;
+                    collidesTiles = false;
+                    collides = false;
+                    spawnUnit = floa;
+                    shootEffect = new WaveEffect(){{
+                        colorFrom = colorTo = GenesisPal.biomass;
+                        sizeTo = 35f;
+                        strokeFrom = 4f;
+                        lifetime = 20f;
+                    }};
+                    speed = 0f;
+                    instantDisappear = true;
+                    hittable = false;
+                    collidesAir = true;
+                }};
+            }});
         }};
     }
 }
