@@ -69,6 +69,10 @@ public class BioBlock extends Block {
         public int pulseCharge=0; //+1 everytime this block pulse
         
         public boolean monarch = false; //Special boolean that determine if this is from monarch
+        
+        //traumatic result of the monarch incident
+        public float extraFloat1,extraFloat2,extraFloat3,extraFloat4;
+        public int extraInt,extraByte;
 
         public ArrayList<Integer> possibleGrowDir = new ArrayList<>();
         public float drawPulseScale=0;
@@ -233,6 +237,14 @@ public class BioBlock extends Block {
             write.bool(fullyGrown);
             write.f(growProgress);
             write.bool(monarch);
+            
+            write.f(extraFloat1);
+            write.f(extraFloat2);
+            write.f(extraFloat3);
+            write.f(extraFloat4);
+            
+            write.i(extraInt);
+            write.i(extraByte);
         }
 
         @Override
@@ -247,6 +259,14 @@ public class BioBlock extends Block {
             fullyGrown=read.bool();
             growProgress=read.f();
             monarch=read.bool();
+            
+            extraFloat1=read.f();
+            extraFloat2=read.f();
+            extraFloat3=read.f();
+            extraFloat4=read.f();
+            
+            extraInt=read.i();
+            extraByte=read.i();
         }
     }
 }
